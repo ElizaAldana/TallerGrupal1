@@ -1,5 +1,11 @@
 package controller;
 
-public class Controller {
+import model.Logic;
 
+
+public class Controller {
 }
+
+	
+
+	

@@ -17,9 +17,10 @@ public class Main extends PApplet {
 	}
 	
 	public void setup() {
+		control = new Controller();
 	}
 	
 	public void draw() {
-		background(0);
+		background(250);
 }
 }
