@@ -1,5 +1,6 @@
 package view;
 
+import controller.Controller;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -8,6 +9,9 @@ public class Main extends PApplet {
 		// TODO Auto-generated method stub
 
 	}
+	
+	Controller control;
+
 	public void settings() {
 		size(500,500);
 	}
