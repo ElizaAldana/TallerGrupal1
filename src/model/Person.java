@@ -35,4 +35,7 @@ public String getNation() {
 public int getPhone() {
 	return this.phone;
 }
+public int compareTo() {
+	return phone;
+}
 }
