@@ -37,6 +37,7 @@ private ArrayList<Contact> contacts;
 	}
 	
 	public void drawList() {
+		app.fill(255);
 		app.text(contacto.getPhone(),100,100);
 		System.out.println(contacto.getName());
 		System.out.println(contacto.getLastn());

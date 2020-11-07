@@ -2,7 +2,7 @@ package model;
 
 public class Person {
 	
-private String name;
+protected String name;
 private String lastn;
 private String email;
 private String nation;
