@@ -15,7 +15,7 @@ public class Controller {
 		this.app=app;
 		this.cp5=cp5;
 		
-		logic = new Logic(app, cp5);
+		logic = new Logic(app);
 		
 	}
 	
@@ -25,7 +25,7 @@ public class Controller {
 	}
 
 	public void drawlist() {
-		logic.drawList();
+		logic.getList();
 		
 	}
 

@@ -3,10 +3,10 @@ package model;
 public class Person {
 	
 protected String name;
-private String lastn;
-private String email;
-private String nation;
-private int phone;
+protected String lastn;
+protected String email;
+protected String nation;
+protected int phone;
 
 public Person(String name,String lastn,String email,String nation, int phone) {
 	this.name=name;

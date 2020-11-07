@@ -5,22 +5,20 @@ import processing.core.PFont;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import controlP5.*;
+
 
 
 public class Logic {
 	
 private PApplet app ;
-private ControlP5 p5;
 public Contact contacto;
 private LinkedList<Contact> contacts;
 
-
-	public Logic(PApplet app, ControlP5 p5) {
+	public Logic(PApplet app) {
 		this.app=app;
-		this.p5=p5;
+contacts = new LinkedList<Contact>();
 		
-		contacts = new LinkedList<Contact>();
+		
 		
 	}
 	
@@ -33,8 +31,8 @@ private LinkedList<Contact> contacts;
 	public void addContact(String name, String lastn, String email, String nation, int phone){
 	
 		
-		 contacto = new Contact(name, lastn, email, nation, phone);
-		 contacts.add(contacto);
+		 
+		 contacts.add(new Contact(name, lastn, email, nation, phone,app));
 
 	}
 	

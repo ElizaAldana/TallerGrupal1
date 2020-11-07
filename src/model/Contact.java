@@ -1,12 +1,13 @@
 package model;
+import processing.core.PApplet;
 
 public class Contact extends Person implements Comparable <Contact>{
 
+private PApplet app;
 
-
-	public Contact(String name, String lastn, String email, String nation, int phone) {
+	public Contact(String name, String lastn, String email, String nation, int phone,PApplet app) {
 		super(name, lastn, email, nation, phone);
-		// TODO Auto-generated constructor stub
+		this.app=app;
 	}
 
 	
@@ -15,4 +16,19 @@ public class Contact extends Person implements Comparable <Contact>{
 		return this.getName().compareTo(c.getName()); 
 	}
 
+	public void draw(int x, int y) {
+		app.fill(250);
+		app.rect(x,y,500,10);
+		app.fill(0);
+		app.text(this.name, x, y);
+		x=x+70;
+		app.text(this.lastn, x, y);
+		x=x+70;
+		app.text(this.email, x, y);
+		x=x+70;
+		app.text(this.nation, x, y);
+		x=x+70;
+		app.text(this.phone, x, y);
+		x=x-280;
+	}
 }
