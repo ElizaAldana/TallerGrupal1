@@ -11,8 +11,8 @@ public class Contact extends Person implements Comparable <Contact>{
 
 	
 	
-	public String compareTo(Contact c) {
+	public int compareTo(Contact c) {
 		return this.getName().compareTo(c.getName()); 
 	}
 
-//}
+}
