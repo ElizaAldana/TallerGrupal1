@@ -1,8 +1,6 @@
 package model;
 
 import processing.core.PApplet;
-import processing.core.PFont;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 
@@ -16,6 +14,7 @@ private LinkedList<Contact> contacts;
 
 	public Logic(PApplet app) {
 		this.app=app;
+		
 contacts = new LinkedList<Contact>();
 		
 		
@@ -30,7 +29,6 @@ contacts = new LinkedList<Contact>();
 	
 	public void addContact(String name, String lastn, String email, String nation, int phone){
 	
-		
 		 
 		 contacts.add(new Contact(name, lastn, email, nation, phone,app));
 
@@ -38,6 +36,7 @@ contacts = new LinkedList<Contact>();
 	
 	public LinkedList<Contact> getList() {
 return contacts;
+
 }
 			
 			

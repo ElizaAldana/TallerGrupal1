@@ -2,8 +2,11 @@ package controller;
 
 import processing.core.PApplet;
 import java.util.ArrayList;
+import java.util.LinkedList;
+
 import controlP5.*;
 import model.Logic;
+import model.Contact;
 
 
 public class Controller {
@@ -29,8 +32,8 @@ public class Controller {
 		
 	}
 
-	public void getList() {
-		logic.getList();
+	public LinkedList<Contact> getList() {
+		return logic.getList();
 		
 	}
 }

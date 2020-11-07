@@ -70,7 +70,7 @@ public class Main extends PApplet {
 		
 		
 		
-			for (int i=0 ;i <control.getList().size();i++) {
+			for (int i=0 ;i < control.getList().size() ;i++) {
 				control.getList().get(i).draw(10,100);
 			}
 			

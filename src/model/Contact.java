@@ -21,14 +21,14 @@ private PApplet app;
 		app.rect(x,y,500,10);
 		app.fill(0);
 		app.text(this.name, x, y);
-		x=x+70;
+		y=+70;
 		app.text(this.lastn, x, y);
-		x=x+70;
+		y+=70;
 		app.text(this.email, x, y);
-		x=x+70;
+		y+=70;
 		app.text(this.nation, x, y);
-		x=x+70;
+		y+=70;
 		app.text(this.phone, x, y);
-		x=x-280;
+		y=y-280;
 	}
 }
