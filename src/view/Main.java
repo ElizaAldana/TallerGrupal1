@@ -66,11 +66,13 @@ public class Main extends PApplet {
 		fill(0);
 		rect(0,450,500,100);
 		
-		 
+		 control.getList();
 		
 		
 		
-		
+			for (int i=0 ;i <control.getList().size();i++) {
+				
+			}
 		
 }
 	public void mouseClicked() {

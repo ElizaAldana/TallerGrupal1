@@ -28,6 +28,11 @@ public class Controller {
 		logic.drawList();
 		
 	}
+
+	public void getList() {
+		logic.getList();
+		
+	}
 }
 
 	
