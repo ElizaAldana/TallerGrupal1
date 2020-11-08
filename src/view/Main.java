@@ -63,25 +63,36 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		background(250);
-		fill(0);
-		rect(0,450,500,100);
+		
+		fill(255,0,0);
+		rect(0,450,width/2,100);
+		
+		fill(0,0,255);
+		rect(width/2,450,width/2,100);
 		
 	
 		
 		
 		
 			for (int i=0 ;i < control.getList().size() ;i++) {
-				control.getList().get(i).draw(10,100);
+				control.getList().get(i).draw(150*i,100);
 			}
-			
-			
+			fill(0);
+			text("esconder",width/2,500);
+			text("registrar",0,500);
 }
 	public void mouseClicked() {
-		if(mouseY>450) {
+		if(mouseY>450&&mouseX<width/2) {
 			regC();
 		
-		//esto de aqui abajo es una prueba - despues se remplaza por un actibador para dibujar la lista en la vista
-		control.drawlist();
+		
+		//para baciar el texto de los cuadros
+		clear();
+		}
+	if(mouseY>450&&mouseX>width/2) {
+			
+	//para esconder los cuadros- usar en los cambios de pantalla
+		hide();
 		}
 	}
 	
@@ -97,8 +108,25 @@ public class Main extends PApplet {
 		
 		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
 		int phone =Integer.parseInt (cp5.get(Textfield.class,"phone").getText());
-		
 		//esta de abajo toma las varibles y las manda para hacer el arreglo
 		control.regC(name,lastn,email,nation,phone);
+		
+		
+		
 		}
+	public void hide() {
+		//con esta funcion hide puedes esconder los cuadros de ingrso de texto, usar en los cambios de pantalla o cuando se hayan dejado de usar
+		cp5.get("name").hide();
+		cp5.get("lastn").hide();
+		cp5.get("email").hide();
+		cp5.get("nation").hide();
+		cp5.get("phone").hide();
+	}
+	public void clear() {
+		 cp5.get(Textfield.class,"name").clear();
+		 cp5.get(Textfield.class,"lastn").clear();
+		 cp5.get(Textfield.class,"email").clear();
+		 cp5.get(Textfield.class,"nation").clear();
+		 cp5.get(Textfield.class,"phone").clear();
+	}
 }

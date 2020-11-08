@@ -17,11 +17,9 @@ private PApplet app;
 	}
 
 	public void draw(int x, int y) {
-		app.fill(250);
-		app.rect(x,y,500,10);
 		app.fill(0);
 		app.text(this.name, x, y);
-		y=+70;
+		y+=70;
 		app.text(this.lastn, x, y);
 		y+=70;
 		app.text(this.email, x, y);
