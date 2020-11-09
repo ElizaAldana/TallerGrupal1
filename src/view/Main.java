@@ -74,8 +74,8 @@ public class Main extends PApplet {
 		
 		
 		
-			for (int i=0 ;i < control.getList().size() ;i++) {
-				control.getList().get(i).draw(150*i,100);
+		for (int i=0 ;i < control.getList().size() ;i++) {
+			control.getList().get(i).draw(150*i,100);
 			}
 			fill(0);
 			text("esconder",width/2,500);
@@ -89,7 +89,7 @@ public class Main extends PApplet {
 		//para vaciar el texto de los cuadros
 		clear();
 		}
-	if(mouseY>450&&mouseX>width/2) {
+		if(mouseY>450&&mouseX>width/2) {
 			
 	//para esconder los cuadros- usar en los cambios de pantalla
 		hide();
