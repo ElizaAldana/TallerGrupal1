@@ -11,7 +11,7 @@ private PApplet app;
 	}
 
 	
-	
+	//tomar el nombre y compararlo
 	public int compareTo(Contact c) {
 		return this.getName().compareTo(c.getName()); 
 	}

@@ -86,7 +86,7 @@ public class Main extends PApplet {
 			regC();
 		
 		
-		//para baciar el texto de los cuadros
+		//para vaciar el texto de los cuadros
 		clear();
 		}
 	if(mouseY>450&&mouseX>width/2) {
@@ -115,7 +115,7 @@ public class Main extends PApplet {
 		
 		}
 	public void hide() {
-		//con esta funcion hide puedes esconder los cuadros de ingrso de texto, usar en los cambios de pantalla o cuando se hayan dejado de usar
+		//con esta funcion hide puedes esconder los cuadros de ingreso de texto, usar en los cambios de pantalla o cuando se hayan dejado de usar
 		cp5.get("name").hide();
 		cp5.get("lastn").hide();
 		cp5.get("email").hide();
