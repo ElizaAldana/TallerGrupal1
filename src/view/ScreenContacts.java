@@ -9,7 +9,7 @@ public class ScreenContacts {
 	PImage contact;
 
 	public void setup() {
-		contact= app.loadImage("pngs/11.png");
+		contact= app.loadImage("pngs/c1.png");
 		
 	}
 }
