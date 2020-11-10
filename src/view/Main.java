@@ -29,10 +29,10 @@ public class Main extends PApplet {
 		
 		//estos son los campos de texto
 		 cp5.addTextfield("name")
-		   .setPosition(50,0)
-		   .setSize(250,60)
-		   .setFont(createFont("arial",20))
-		   .setAutoClear(false);
+		  .setPosition(50,0)
+		  .setSize(250,60)
+		  .setFont(createFont("arial",20))
+		  .setAutoClear(false);
 		 
 		 cp5.addTextfield("lastn")
 	     .setPosition(50,100)
