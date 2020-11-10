@@ -8,14 +8,14 @@ import java.util.LinkedList;
 
 public class Logic {
 	
-private PApplet app ;
-public Contact contacto;
-private LinkedList<Contact> contacts;
+	private PApplet app ;
+	public Contact contacto;
+	private LinkedList<Contact> contacts;
 
 	public Logic(PApplet app) {
 		this.app=app;
 		
-contacts = new LinkedList<Contact>();
+		contacts = new LinkedList<Contact>();
 		
 		
 		
@@ -35,7 +35,7 @@ contacts = new LinkedList<Contact>();
 	}
 	
 	public LinkedList<Contact> getList() {
-return contacts;
+		return contacts;
 
 }
 			
