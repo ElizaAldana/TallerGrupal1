@@ -29,6 +29,8 @@ public class ScreenInfo {
 				app.image(infoV,0,0,app.width,app.height);
 			break;
 			case 1:
+				app.imageMode(PConstants.CORNER);
+				app.image(infoL,0,0,app.width,app.height);
 			break;
 			}
 }
