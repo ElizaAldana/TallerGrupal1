@@ -6,9 +6,9 @@ protected String name;
 protected String lastn;
 protected String email;
 protected String nation;
-protected int phone;
+protected float phone;
 
-public Person(String name,String lastn,String email,String nation, int phone) {
+public Person(String name,String lastn,String email,String nation, float phone) {
 	this.name=name;
 	this.lastn=lastn;
 	this.email=email;
@@ -32,10 +32,10 @@ public String getNation() {
 	return this.nation;
 }
 
-public int getPhone() {
+public float getPhone() {
 	return this.phone;
 }
-public int compareTo() {
+public float compareTo() {
 	return phone;
 }
 }

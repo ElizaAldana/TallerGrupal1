@@ -21,13 +21,13 @@ public class Logic {
 		
 	}
 	
-	public void userReg(String name, String lastn, String email, String nation, int phone, String password){
+	public void userReg(String name, String lastn, String email, String nation, float phone, String password){
 		
 		User user = new User(name, lastn, email, nation, phone, password);
 		
 	}
 	
-	public void addContact(String name, String lastn, String email, String nation, int phone){
+	public void addContact(String name, String lastn, String email, String nation, float phone){
 	
 		 
 		 contacts.add(new Contact(name, lastn, email, nation, phone,app));

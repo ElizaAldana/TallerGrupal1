@@ -22,7 +22,7 @@ public class Controller {
 		
 	}
 	
-	public void regC(String name, String lastn, String email, String nation, int phone) {
+	public void regC(String name, String lastn, String email, String nation, float phone) {
 		
 		logic.addContact(name, lastn, email, nation, phone);
 	}

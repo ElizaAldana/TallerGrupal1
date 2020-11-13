@@ -5,7 +5,7 @@ public class Contact extends Person implements Comparable <Contact>{
 
 private PApplet app;
 
-	public Contact(String name, String lastn, String email, String nation, int phone,PApplet app) {
+	public Contact(String name, String lastn, String email, String nation, float phone,PApplet app) {
 		super(name, lastn, email, nation, phone);
 		this.app=app;
 	}

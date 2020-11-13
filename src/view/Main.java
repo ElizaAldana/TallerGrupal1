@@ -100,14 +100,15 @@ public class Main extends PApplet {
 	public void regC() {
 				
 		//esta zona toma los valores que se escriban en los cuadros de texto y lo convierte en variables
-		String 
+		//EXCEPCIONES
+		String
 		name = cp5.get(Textfield.class,"name").getText(),
 		lastn = cp5.get(Textfield.class,"lastn").getText(),
 		email = cp5.get(Textfield.class,"email").getText(),
 		nation = cp5.get(Textfield.class,"nation").getText();
 		
 		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
-		int phone =Integer.parseInt (cp5.get(Textfield.class,"phone").getText());
+		float phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
 		//esta de abajo toma las varibles y las manda para hacer el arreglo
 		control.regC(name,lastn,email,nation,phone);
 		
