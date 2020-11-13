@@ -4,10 +4,17 @@ import processing.core.PApplet;
 public class Contact extends Person implements Comparable <Contact>{
 
 private PApplet app;
+private String name, lastn, email, nation;
+private float phone;
 
 	public Contact(String name, String lastn, String email, String nation, float phone,PApplet app) {
 		super(name, lastn, email, nation, phone);
 		this.app=app;
+		this.email=email;
+		this.lastn=lastn;
+		this.name=name;
+		this.nation=nation;
+		this.phone=phone;
 	}
 
 	
@@ -29,4 +36,66 @@ private PApplet app;
 		app.text(this.phone, x, y);
 		y=y-280;
 	}
+
+
+	public PApplet getApp() {
+		return app;
+	}
+
+
+	public void setApp(PApplet app) {
+		this.app = app;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getLastn() {
+		return lastn;
+	}
+
+
+	public void setLastn(String lastn) {
+		this.lastn = lastn;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getNation() {
+		return nation;
+	}
+
+
+	public void setNation(String nation) {
+		this.nation = nation;
+	}
+
+
+	public float getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(float phone) {
+		this.phone = phone;
+	}
+	
+	
 }
