@@ -130,4 +130,7 @@ public class Main extends PApplet {
 		 cp5.get(Textfield.class,"nation").clear();
 		 cp5.get(Textfield.class,"phone").clear();
 	}
+	public void keyPressed() {
+		control.sortContact(key);
+}
 }

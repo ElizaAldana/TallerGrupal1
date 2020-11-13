@@ -31,11 +31,17 @@ public class Controller {
 		logic.getList();
 		
 	}
+	
+	public void sortContact(char s) {
+		logic.sortList(s);
+	}
 
 	public LinkedList<Contact> getList() {
 		return logic.getList();
 		
 	}
+	
+	
 }
 
 	
