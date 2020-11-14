@@ -22,8 +22,10 @@ public class Main extends PApplet {
 	String datos2;
 	String datos3;
 	String datos4;
+	
 	ScreenRegC screenRcont;
 	ScreenLogIn screenLogIn;
+	ScreenRegister screenReg;
 	
 	public void settings() {
 		size(900,600);
@@ -35,8 +37,9 @@ public class Main extends PApplet {
 		 textFont(font);
 		cp5 = new ControlP5(this);
 		screenRcont = new ScreenRegC(this);
-		//screenLogIn = new ScreenLogIn(this);
-		
+		//screenReg = new ScreenRegister(this); Activar cuando ya estén las pantallas
+		control = new Controller(this,cp5);
+
 		//se puede borrar si me dicen que sí lo dejemos así separado xd
 		//estos son los campos de texto
 		/*cp5.addTextfield("name")
@@ -69,7 +72,6 @@ public class Main extends PApplet {
 	     .setFont(createFont("arial",20))
 	     .setAutoClear(false);*/
 		
-		control = new Controller(this,cp5);
 	}
 	
 	public void draw() {
@@ -100,17 +102,27 @@ public class Main extends PApplet {
 		}
 		if(mouseY>450&&mouseX>width/2) {
 			
-		//para esconder los cuadros- usar en los cambios de pantalla
+		//para esconder los cuadros - usar en los cambios de pantalla
 		hide();
 		}
 	}
 	
-		//funcion para registrar
+	//Activar cuando estén las pantallas
+		/*if(mouseY>450&&mouseX<width/2) {
+		regU();
+		clear();
+	}
+		if(mouseY>450&&mouseX<width/2) {
+		hide();
+	}
+	}*/
+	
+		//funcion para registrar contactos
 		public void regC() {
 				
 		//esta zona toma los valores que se escriban en los cuadros de texto y lo convierte en variables
 		//EXCEPCIONES
-			screenRcont.regC();
+		screenRcont.regC();
 		String
 		name = screenRcont.getName(),
 		lastn = screenRcont.getLastn(),
@@ -128,7 +140,21 @@ public class Main extends PApplet {
 		datos4 = datos4 + ":" + phone;
 		
 		}
-	
+		
+		//Esto también para cuando esté la pantalla
+		/*public void regU() {
+		screenReg.regU();
+		String 
+		name = screenReg.getName(),
+		lastn = screenReg.getLastn(),
+		email = screenReg.getLastn(),
+		nation = screenReg.getNation(),
+		password = screenReg.getPassword();
+		float phone = screenReg.getPhone();
+		
+		control.regU(name, lastn, email, nation, phone, password);
+		}
+	*/
 	public void LogIn() {
 		screenLogIn.logIn(this);
 	}

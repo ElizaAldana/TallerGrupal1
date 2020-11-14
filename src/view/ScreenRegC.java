@@ -61,7 +61,6 @@ public class ScreenRegC {
 				
 		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
 		phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
-		//esta de abajo toma las varibles y las manda para hacer el arreglo
 	}
 	
 	public void hide() {
