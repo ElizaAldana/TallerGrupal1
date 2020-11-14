@@ -87,7 +87,7 @@ public class Main extends PApplet {
 		if(pantalla==1) {
 		
 		//screenLogIn.textFields();	
-		pantalla=3;	
+		pantalla=2;	
 		}
 		//if(pantalla==2) {
 			
