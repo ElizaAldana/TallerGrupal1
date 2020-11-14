@@ -44,6 +44,7 @@ public class Logic {
 
 	}
 
+
 	public void sortList(char s) {
 		switch (s) { 
 		case 'c':

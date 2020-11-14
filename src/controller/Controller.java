@@ -26,6 +26,10 @@ public class Controller {
 		
 		logic.addContact(name, lastn, email, nation, phone);
 	}
+	public void regU(String name, String lastn, String email, String nation, float phone, String password) {
+		
+		logic.userReg(name, lastn, email, nation, phone, password);
+	}
 
 	public void drawlist() {
 		logic.getList();
