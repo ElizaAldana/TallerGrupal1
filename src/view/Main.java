@@ -79,6 +79,7 @@ public class Main extends PApplet {
 	}
 	
 	public void draw() {
+		text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
 		switch(pantalla) {
 		case 1:
 			//SPLASH SCREEN
@@ -100,7 +101,7 @@ public class Main extends PApplet {
 		fill(0,0,255);
 		rect(width/2,450,width/2,100);
 		
-		text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
+		
 		
 		
 		
