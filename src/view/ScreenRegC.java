@@ -11,7 +11,7 @@ public class ScreenRegC {
 	PApplet app;
 	PImage regcon;
 	ControlP5 cp5;
-	String name,lastn, email,nation;
+	String name,lastn, email, nation;
 	float phone;
 	
 	

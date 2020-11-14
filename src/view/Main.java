@@ -16,13 +16,6 @@ public class Main extends PApplet {
 	Controller control;
 	ControlP5 cp5;
 	
-	//También para register (no sé si cambiarlo a user en model)
-	String datos;
-	String datos1;
-	String datos2;
-	String datos3;
-	String datos4;
-	
 	ScreenRegC screenRcont;
 	ScreenLogIn screenLogIn;
 	ScreenRegister screenReg;
@@ -39,39 +32,6 @@ public class Main extends PApplet {
 		screenRcont = new ScreenRegC(this);
 		//screenReg = new ScreenRegister(this); Activar cuando ya estén las pantallas
 		control = new Controller(this,cp5);
-
-		//se puede borrar si me dicen que sí lo dejemos así separado xd
-		//estos son los campos de texto
-		/*cp5.addTextfield("name")
-		  .setPosition(50,0)
-		  .setSize(250,60)
-		  .setFont(createFont("arial",20))
-		  .setAutoClear(false);
-		 
-		 cp5.addTextfield("lastn")
-	     .setPosition(50,100)
-	     .setSize(250,60)
-	     .setFont(createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("email")
-	     .setPosition(50,200)
-	     .setSize(250,60)
-	     .setFont(createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("nation")
-	     .setPosition(50,300)
-	     .setSize(250,60)
-	     .setFont(createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("phone")
-	     .setPosition(50,400)
-	     .setSize(250,60)
-	     .setFont(createFont("arial",20))
-	     .setAutoClear(false);*/
-		
 	}
 	
 	public void draw() {
@@ -131,14 +91,6 @@ public class Main extends PApplet {
 		float phone = screenRcont.getPhone();
 		
 		control.regC(name,lastn,email,nation,phone);
-		
-		//Para register (es la base de datos) tampoco sé si ponerlo en user
-		datos = datos + ":" + name;
-		datos1 = datos1 + ":" + lastn;
-		datos2 = datos2 + ":" + email;
-		datos3 = datos3 + ":" + nation;
-		datos4 = datos4 + ":" + phone;
-		
 		}
 		
 		//Esto también para cuando esté la pantalla
@@ -169,17 +121,7 @@ public class Main extends PApplet {
 	}
 	public void keyPressed() {
 		control.sortContact(key);
-	}
-
-	//son para los datos del register
-	public String getDatos() {
-		return datos;
-	}
-
-	public void setDatos(String datos) {
-		this.datos = datos;
-	}
-	
+	}	
 	
 	
 }
