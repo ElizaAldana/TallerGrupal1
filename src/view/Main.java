@@ -22,7 +22,7 @@ public class Main extends PApplet {
 	String datos2;
 	String datos3;
 	String datos4;
-	ScreenReg screenReg;
+	ScreenRegC screenRcont;
 	ScreenLogIn screenLogIn;
 	
 	public void settings() {
@@ -34,7 +34,7 @@ public class Main extends PApplet {
 		PFont font = createFont("arial",20);
 		 textFont(font);
 		cp5 = new ControlP5(this);
-		screenReg = new ScreenReg(this);
+		screenRcont = new ScreenRegC(this);
 		//screenLogIn = new ScreenLogIn(this);
 		
 		//se puede borrar si me dicen que sí lo dejemos así separado xd
@@ -110,13 +110,13 @@ public class Main extends PApplet {
 				
 		//esta zona toma los valores que se escriban en los cuadros de texto y lo convierte en variables
 		//EXCEPCIONES
-		screenReg.regScreen();
+			screenRcont.regC();
 		String
-		name = screenReg.getName(),
-		lastn = screenReg.getLastn(),
-		email = screenReg.getEmail(),
-		nation = screenReg.getNation();
-		float phone = screenReg.getPhone();
+		name = screenRcont.getName(),
+		lastn = screenRcont.getLastn(),
+		email = screenRcont.getEmail(),
+		nation = screenRcont.getNation();
+		float phone = screenRcont.getPhone();
 		
 		control.regC(name,lastn,email,nation,phone);
 		
@@ -136,10 +136,10 @@ public class Main extends PApplet {
 	public void hide() {
 		/*con esta funcion hide puedes esconder los cuadros de ingreso de texto, 
 		usar en los cambios de pantalla o cuando se hayan dejado de usar*/
-		screenReg.hide();
+		screenRcont.hide();
 	}
 	public void clear() {
-		screenReg.clear();
+		screenRcont.clear();
 	}
 	public void keyPressed() {
 		control.sortContact(key);

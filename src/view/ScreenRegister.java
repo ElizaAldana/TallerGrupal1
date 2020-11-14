@@ -3,17 +3,17 @@ package view;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class ScreenRegContact {
+public class ScreenRegister {
 
 	PApplet app;
-	PImage regCont;
+	PImage register;
 
 	public void setup() {
-		regCont= app.loadImage("pngs/8.png");
+		register= app.loadImage("pngs/3.png");
 		
 	}
 	
-	public void RegC() {
+	public void regC() {
 		
 	}
 }

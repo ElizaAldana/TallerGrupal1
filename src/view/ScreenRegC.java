@@ -6,22 +6,22 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-public class ScreenReg {
+public class ScreenRegC {
 
 	PApplet app;
-	PImage register;
+	PImage regcon;
 	ControlP5 cp5;
 	String name,lastn, email,nation;
 	float phone;
 	
 	
-	public ScreenReg(PApplet app) {
+	public ScreenRegC(PApplet app) {
 		this.app = app;
 		cp5 = new ControlP5(app);
 		//PFont font = app.createFont("arial",20);
+		regcon= app.loadImage("pngs/8.png");
 		
 		
-		register= app.loadImage("pngs/3.png");
 		cp5.addTextfield("name")
 		  .setPosition(50,0)
 		  .setSize(250,60)
@@ -53,15 +53,12 @@ public class ScreenReg {
 	     .setAutoClear(false);
 	}	
 	
-	public void regScreen() {
-				name = cp5.get(Textfield.class,"name").getText();
-				lastn = cp5.get(Textfield.class,"lastn").getText();
-				email = cp5.get(Textfield.class,"email").getText();
-				nation = cp5.get(Textfield.class,"nation").getText();
+	public void regC() {
 				
-				//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
-				phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
-				//esta de abajo toma las varibles y las manda para hacer el arreglo
+				
+		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
+		phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
+		//esta de abajo toma las varibles y las manda para hacer el arreglo
 	}
 	
 	public void hide() {
