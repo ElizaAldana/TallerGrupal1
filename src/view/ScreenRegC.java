@@ -54,7 +54,10 @@ public class ScreenRegC {
 	}	
 	
 	public void regC() {
-				
+		name = cp5.get(Textfield.class,"name").getText();
+		lastn = cp5.get(Textfield.class,"lastn").getText();
+		email = cp5.get(Textfield.class,"email").getText();
+		nation = cp5.get(Textfield.class,"nation").getText();	
 				
 		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
 		phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
