@@ -52,7 +52,7 @@ public class Main extends PApplet {
 		case 2:
 			screenLog.drawLog();
 			//if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)){
-			//	screenLogIn.drawButton(1);
+			//	screenLog.drawButton(1);
 			//}
 			break;
 		case 3:
@@ -87,7 +87,7 @@ public class Main extends PApplet {
 		if(pantalla==1) {
 		
 		//screenLogIn.textFields();	
-		pantalla=2;	
+		pantalla=3;	
 		}
 		//if(pantalla==2) {
 			
