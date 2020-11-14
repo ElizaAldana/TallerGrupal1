@@ -3,6 +3,7 @@ package view;
 import controlP5.ControlP5;
 import controlP5.Textfield;
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PImage;
 
 public class ScreenRegister {
@@ -20,43 +21,49 @@ public class ScreenRegister {
 		register= app.loadImage("pngs/3.png");
 		
 		//cambiar las coordenadas para que den con los espacios de los png
-		cp5.addTextfield("name")
-		  .setPosition(50,0)
-		  .setSize(250,60)
-		  .setFont(app.createFont("arial",20))
-		  .setAutoClear(false);
-		 
-		 cp5.addTextfield("lastn")
-	     .setPosition(50,100)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("email")
-	     .setPosition(50,200)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("nation")
-	     .setPosition(50,300)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("phone")
-	     .setPosition(50,400)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("password")
-	     .setPosition(50,500)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
+	
 	}
-		
+		public void textFields() {
+			cp5.addTextfield("name")
+			  .setPosition(50,0)
+			  .setSize(250,60)
+			  .setFont(app.createFont("arial",20))
+			  .setAutoClear(false);
+			 
+			 cp5.addTextfield("lastn")
+		     .setPosition(50,100)
+		     .setSize(250,60)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("email")
+		     .setPosition(50,200)
+		     .setSize(250,60)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("nation")
+		     .setPosition(50,300)
+		     .setSize(250,60)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("phone")
+		     .setPosition(50,400)
+		     .setSize(250,60)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("password")
+		     .setPosition(50,500)
+		     .setSize(250,60)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+		}
+		public void drawReg() {
+			app.imageMode(PConstants.CORNER);
+			app.image(register,0,0,app.width,app.height);
+		}
 			
 		public void regU() {
 			

@@ -13,7 +13,7 @@ public class Main extends PApplet {
 		// TODO Auto-generated method stub
 		PApplet.main(Main.class.getName());
 	}
-	String pantalla;
+	int pantalla;
 	PImage splash;
 	Controller control;
 	ControlP5 cp5;
@@ -35,13 +35,13 @@ public class Main extends PApplet {
 	}
 	
 	public void setup() {
-		pantalla="splash";
+		pantalla=1;
 		splash= loadImage("pngs/1.png");
 		PFont font = createFont("arial",20);
 		 textFont(font);
 		cp5 = new ControlP5(this);
 		screenRcont = new ScreenRegC(this);
-		//screenReg = new ScreenRegister(this); Activar cuando ya estén las pantallas
+		screenReg = new ScreenRegister(this); 
 		control = new Controller(this,cp5);
 
 		//se puede borrar si me dicen que sí lo dejemos así separado xd
@@ -80,10 +80,17 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		switch(pantalla) {
-		case "splash":
+		case 1:
+			//SPLASH SCREEN
 			imageMode(CORNER);
 			image(splash,0,0,width,height);
 			break;
+		case 2:
+			//REGISTER SCREEN
+			screenReg.drawReg();
+			
+			break;
+		
 		}
 		/*background(250);
 		
@@ -105,15 +112,17 @@ public class Main extends PApplet {
 			text("registrar",0,500);*/
 		}
 	public void mouseClicked() {
-		if(mouseY>450&&mouseX<width/2) {
-		regC();
+		if(pantalla==1) {
+		//regC();
 		//para vaciar el texto de los cuadros
-		clear();
+		//clear();
+		screenReg.textFields();	
+		pantalla=2;	
 		}
 		if(mouseY>450&&mouseX>width/2) {
 			
 		//para esconder los cuadros - usar en los cambios de pantalla
-		hide();
+		//hide();
 		}
 	}
 	

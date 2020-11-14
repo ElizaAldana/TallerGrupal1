@@ -22,6 +22,9 @@ public class ScreenRegC {
 		regcon= app.loadImage("pngs/8.png");
 		
 		
+		
+	}	
+	public void textFields() {
 		cp5.addTextfield("name")
 		  .setPosition(50,0)
 		  .setSize(250,60)
@@ -51,8 +54,7 @@ public class ScreenRegC {
 	     .setSize(250,60)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
-	}	
-	
+	}
 	public void regC() {
 		name = cp5.get(Textfield.class,"name").getText();
 		lastn = cp5.get(Textfield.class,"lastn").getText();
