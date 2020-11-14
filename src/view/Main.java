@@ -4,6 +4,7 @@ import controller.Controller;
 import processing.core.PApplet;
 import controlP5.*;
 import processing.core.PFont;
+import processing.core.PImage;
 
 public class Main extends PApplet {
 
@@ -12,7 +13,8 @@ public class Main extends PApplet {
 		// TODO Auto-generated method stub
 		PApplet.main(Main.class.getName());
 	}
-	
+	String pantalla;
+	PImage splash;
 	Controller control;
 	ControlP5 cp5;
 	
@@ -33,6 +35,8 @@ public class Main extends PApplet {
 	}
 	
 	public void setup() {
+		pantalla="splash";
+		splash= loadImage("pngs/1.png");
 		PFont font = createFont("arial",20);
 		 textFont(font);
 		cp5 = new ControlP5(this);
@@ -75,7 +79,13 @@ public class Main extends PApplet {
 	}
 	
 	public void draw() {
-		background(250);
+		switch(pantalla) {
+		case "splash":
+			imageMode(CORNER);
+			image(splash,0,0,width,height);
+			break;
+		}
+		/*background(250);
 		
 		fill(255,0,0);
 		rect(0,450,width/2,100);
@@ -92,7 +102,7 @@ public class Main extends PApplet {
 			}
 			fill(0);
 			text("esconder",width/2,500);
-			text("registrar",0,500);
+			text("registrar",0,500);*/
 		}
 	public void mouseClicked() {
 		if(mouseY>450&&mouseX<width/2) {
