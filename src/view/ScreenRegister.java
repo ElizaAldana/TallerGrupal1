@@ -51,7 +51,7 @@ public class ScreenRegister {
 	     .setAutoClear(false);
 		 
 		 cp5.addTextfield("password")
-	     .setPosition(50,400)
+	     .setPosition(50,500)
 	     .setSize(250,60)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);

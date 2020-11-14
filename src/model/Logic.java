@@ -43,6 +43,10 @@ public class Logic {
 		 contacts.add(new Contact(name, lastn, email, nation, phone,app));
 
 	}
+	
+	public void addCard(String titular, String date, int number, int cvv) {
+		Card card = new Card(titular, date, number, cvv);
+	}
 
 
 	public void sortList(char s) {

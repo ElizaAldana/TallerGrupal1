@@ -30,7 +30,9 @@ public class Controller {
 		
 		logic.userReg(name, lastn, email, nation, phone, password);
 	}
-
+	public void regCard(String titular, String date, int number, int cvv) {
+		logic.addCard(titular, date, number, cvv);
+	}
 	public void drawlist() {
 		logic.getList();
 		
