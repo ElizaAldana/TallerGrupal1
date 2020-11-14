@@ -4,6 +4,7 @@ import controller.Controller;
 import processing.core.PApplet;
 import controlP5.*;
 import processing.core.PFont;
+import processing.core.PImage;
 
 public class Main extends PApplet {
 
@@ -12,7 +13,8 @@ public class Main extends PApplet {
 		// TODO Auto-generated method stub
 		PApplet.main(Main.class.getName());
 	}
-	
+	int pantalla;
+	PImage splash;
 	Controller control;
 	ControlP5 cp5;
 	
@@ -26,16 +28,31 @@ public class Main extends PApplet {
 	}
 	
 	public void setup() {
+		pantalla=1;
+		splash= loadImage("pngs/1.png");
 		PFont font = createFont("arial",20);
 		 textFont(font);
 		cp5 = new ControlP5(this);
 		screenRcont = new ScreenRegC(this);
-		//screenReg = new ScreenRegister(this); Activar cuando ya estén las pantallas
+		screenReg = new ScreenRegister(this); 
 		control = new Controller(this,cp5);
 	}
 	
 	public void draw() {
-		background(250);
+		switch(pantalla) {
+		case 1:
+			//SPLASH SCREEN
+			imageMode(CORNER);
+			image(splash,0,0,width,height);
+			break;
+		case 2:
+			//REGISTER SCREEN
+			screenReg.drawReg();
+			
+			break;
+		
+		}
+		/*background(250);
 		
 		fill(255,0,0);
 		rect(0,450,width/2,100);
@@ -52,18 +69,20 @@ public class Main extends PApplet {
 			}
 			fill(0);
 			text("esconder",width/2,500);
-			text("registrar",0,500);
+			text("registrar",0,500);*/
 		}
 	public void mouseClicked() {
-		if(mouseY>450&&mouseX<width/2) {
-		regC();
+		if(pantalla==1) {
+		//regC();
 		//para vaciar el texto de los cuadros
-		clear();
+		//clear();
+		screenReg.textFields();	
+		pantalla=2;	
 		}
 		if(mouseY>450&&mouseX>width/2) {
 			
 		//para esconder los cuadros - usar en los cambios de pantalla
-		hide();
+		//hide();
 		}
 	}
 	
