@@ -19,7 +19,7 @@ public class Main extends PApplet {
 	ControlP5 cp5;
 	
 	ScreenRegC screenRcont;
-	ScreenLogIn screenLogIn;
+	ScreenLogIn screenLog;
 	ScreenRegister screenReg;
 	
 	public void settings() {
@@ -34,12 +34,15 @@ public class Main extends PApplet {
 		 textFont(font);
 		cp5 = new ControlP5(this);
 		screenRcont = new ScreenRegC(this);
-		screenReg = new ScreenRegister(this); 
+		screenReg = new ScreenRegister(this);
+		screenLog = new ScreenLogIn(this);
 		control = new Controller(this,cp5);
 	}
 	
 	public void draw() {
-		text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
+		System.out.println(mouseX);
+		System.out.println(mouseY);
+		//text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
 		switch(pantalla) {
 		case 1:
 			//SPLASH SCREEN
@@ -47,9 +50,16 @@ public class Main extends PApplet {
 			image(splash,0,0,width,height);
 			break;
 		case 2:
+			screenLog.drawLog();
+			//if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)){
+			//	screenLogIn.drawButton(1);
+			//}
+		case 3:
 			//REGISTER SCREEN
 			screenReg.drawReg();
-			
+			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)){
+			screenReg.drawButton();
+		}
 			break;
 		
 		}
@@ -74,17 +84,19 @@ public class Main extends PApplet {
 		}
 	public void mouseClicked() {
 		if(pantalla==1) {
-		//regC();
-		//para vaciar el texto de los cuadros
-		//clear();
-		screenReg.textFields();	
+		
+		//screenLogIn.textFields();	
 		pantalla=2;	
 		}
-		if(mouseY>450&&mouseX>width/2) {
+		//if(pantalla==2) {
 			
+		
+		//}
+		//regC();
+				//para vaciar el texto de los cuadros
+				//clear();
 		//para esconder los cuadros - usar en los cambios de pantalla
-		//hide();
-		}
+				//hide();
 	}
 	
 	//Activar cuando estén las pantallas
@@ -128,7 +140,7 @@ public class Main extends PApplet {
 		}
 	*/
 	public void LogIn() {
-		screenLogIn.logIn(this);
+		screenLog.logIn(this);
 	}
 	
 	public void hide() {

@@ -10,6 +10,7 @@ public class ScreenRegister {
 
 	PApplet app;
 	PImage register;
+	PImage button3;
 	ControlP5 cp5;
 	String name,lastn, email,nation, password;
 	float phone;
@@ -19,6 +20,7 @@ public class ScreenRegister {
 		cp5 = new ControlP5(app);
 		
 		register= app.loadImage("pngs/3.png");
+		button3 = app.loadImage("pngs/buttons/3b.png");
 		
 		//cambiar las coordenadas para que den con los espacios de los png
 	
@@ -63,6 +65,10 @@ public class ScreenRegister {
 		public void drawReg() {
 			app.imageMode(PConstants.CORNER);
 			app.image(register,0,0,app.width,app.height);
+		}
+		public void drawButton() {
+			app.imageMode(PConstants.CORNER);
+			app.image(button3,0,0,app.width,app.height);
 		}
 			
 		public void regU() {
