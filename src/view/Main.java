@@ -54,6 +54,7 @@ public class Main extends PApplet {
 			//if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)){
 			//	screenLogIn.drawButton(1);
 			//}
+			break;
 		case 3:
 			//REGISTER SCREEN
 			screenReg.drawReg();

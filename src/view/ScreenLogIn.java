@@ -20,7 +20,7 @@ public class ScreenLogIn {
 		log= app.loadImage("pngs/2.png");
 		buttonReg= app.loadImage("pngs/buttons/2bRegis.png");
 		buttonIng= app.loadImage("pngs/buttons/2bIngresar.png");
-		
+		this.app=app;
 		cp5 = new ControlP5(app);
 		
 		
