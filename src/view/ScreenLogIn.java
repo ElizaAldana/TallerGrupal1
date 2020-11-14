@@ -30,17 +30,8 @@ public class ScreenLogIn {
 	public void logIn(Main main) {
 		username = cp5.get(Textfield.class,"Username").getText();
 		
-		String[] separar = main.getDatos().split(":");
-		
-		
-		for (int j = 0; j < separar.length; j++) {
-			if(username.equals(separar[j])) {
-				//cambio de pantalla;
-			}
 		}
 		
 		
 	}
 
-	
-}
