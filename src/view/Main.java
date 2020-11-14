@@ -15,7 +15,16 @@ public class Main extends PApplet {
 	
 	Controller control;
 	ControlP5 cp5;
-
+	
+	//También para register (no sé si cambiarlo a user en model)
+	String datos;
+	String datos1;
+	String datos2;
+	String datos3;
+	String datos4;
+	ScreenReg screenReg;
+	ScreenLogIn screenLogIn;
+	
 	public void settings() {
 		size(900,600);
 	
@@ -25,10 +34,12 @@ public class Main extends PApplet {
 		PFont font = createFont("arial",20);
 		 textFont(font);
 		cp5 = new ControlP5(this);
+		screenReg = new ScreenReg(this);
+		//screenLogIn = new ScreenLogIn(this);
 		
-		
+		//se puede borrar si me dicen que sí lo dejemos así separado xd
 		//estos son los campos de texto
-		 cp5.addTextfield("name")
+		/*cp5.addTextfield("name")
 		  .setPosition(50,0)
 		  .setSize(250,60)
 		  .setFont(createFont("arial",20))
@@ -56,7 +67,7 @@ public class Main extends PApplet {
 	     .setPosition(50,400)
 	     .setSize(250,60)
 	     .setFont(createFont("arial",20))
-	     .setAutoClear(false);
+	     .setAutoClear(false);*/
 		
 		control = new Controller(this,cp5);
 	}
@@ -80,57 +91,69 @@ public class Main extends PApplet {
 			fill(0);
 			text("esconder",width/2,500);
 			text("registrar",0,500);
-}
+		}
 	public void mouseClicked() {
 		if(mouseY>450&&mouseX<width/2) {
-			regC();
-		
-		
+		regC();
 		//para vaciar el texto de los cuadros
 		clear();
 		}
 		if(mouseY>450&&mouseX>width/2) {
 			
-	//para esconder los cuadros- usar en los cambios de pantalla
+		//para esconder los cuadros- usar en los cambios de pantalla
 		hide();
 		}
 	}
 	
-	//funcion para registrar
-	public void regC() {
+		//funcion para registrar
+		public void regC() {
 				
 		//esta zona toma los valores que se escriban en los cuadros de texto y lo convierte en variables
 		//EXCEPCIONES
+		screenReg.regScreen();
 		String
-		name = cp5.get(Textfield.class,"name").getText(),
-		lastn = cp5.get(Textfield.class,"lastn").getText(),
-		email = cp5.get(Textfield.class,"email").getText(),
-		nation = cp5.get(Textfield.class,"nation").getText();
+		name = screenReg.getName(),
+		lastn = screenReg.getLastn(),
+		email = screenReg.getEmail(),
+		nation = screenReg.getNation();
+		float phone = screenReg.getPhone();
 		
-		//esta tuve que ponerle el "Integer.parseInt" para pasar de String a numeros
-		float phone =Float.parseFloat (cp5.get(Textfield.class,"phone").getText());
-		//esta de abajo toma las varibles y las manda para hacer el arreglo
 		control.regC(name,lastn,email,nation,phone);
 		
-		
+		//Para register (es la base de datos) tampoco sé si ponerlo en user
+		datos = datos + ":" + name;
+		datos1 = datos1 + ":" + lastn;
+		datos2 = datos2 + ":" + email;
+		datos3 = datos3 + ":" + nation;
+		datos4 = datos4 + ":" + phone;
 		
 		}
+	
+	public void LogIn() {
+		screenLogIn.logIn(this);
+	}
+	
 	public void hide() {
-		//con esta funcion hide puedes esconder los cuadros de ingreso de texto, usar en los cambios de pantalla o cuando se hayan dejado de usar
-		cp5.get("name").hide();
-		cp5.get("lastn").hide();
-		cp5.get("email").hide();
-		cp5.get("nation").hide();
-		cp5.get("phone").hide();
+		/*con esta funcion hide puedes esconder los cuadros de ingreso de texto, 
+		usar en los cambios de pantalla o cuando se hayan dejado de usar*/
+		screenReg.hide();
 	}
 	public void clear() {
-		 cp5.get(Textfield.class,"name").clear();
-		 cp5.get(Textfield.class,"lastn").clear();
-		 cp5.get(Textfield.class,"email").clear();
-		 cp5.get(Textfield.class,"nation").clear();
-		 cp5.get(Textfield.class,"phone").clear();
+		screenReg.clear();
 	}
 	public void keyPressed() {
 		control.sortContact(key);
-}
+	}
+
+	//son para los datos del register
+	public String getDatos() {
+		return datos;
+	}
+
+	public void setDatos(String datos) {
+		this.datos = datos;
+	}
+	
+	
+	
 }
