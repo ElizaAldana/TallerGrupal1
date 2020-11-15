@@ -23,6 +23,7 @@ public class Main extends PApplet {
 	ScreenRegister screenReg;
 	ScreenHome screenHome;
 	ScreenInfo screenInf;
+	ScreenBuy screenBuy;
 	
 	public void settings() {
 		size(900,600);
@@ -40,12 +41,14 @@ public class Main extends PApplet {
 		screenLog = new ScreenLogIn(this);
 		screenHome = new ScreenHome(this);
 		screenInf = new ScreenInfo(this);
+		screenBuy = new ScreenBuy(this);
 		control = new Controller(this,cp5);
 	}
 	
 	public void draw() {
-		System.out.println(mouseX);
-		System.out.println(mouseY);
+		System.out.println(pantalla);
+		//System.out.println(mouseX);
+		//System.out.println(mouseY);
 		//text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
 		switch(pantalla) {
 		case 1:
@@ -74,6 +77,12 @@ public class Main extends PApplet {
 		case 7:
 			screenInf.drawInf(2);
 			break;
+		case 8:
+			screenRcont.drawRegC();
+			break;
+		case 9:
+			screenBuy.drawBuy();
+			break;
 		case 12:
 			
 			break;
@@ -99,37 +108,60 @@ public class Main extends PApplet {
 		}
 	public void mouseClicked() {
 		//Cambio de pantallas
+		//DE SPLASH A LOG IN
 		if(pantalla==1) {
-		
 		screenLog.textFields();	
 		pantalla=2;	
 		}
+		//DE LOG IN A REGISTER
 		if(pantalla==2&&(505>mouseX&&mouseX>394)&&(473>mouseY&&mouseY>440)) {
 			screenLog.hide();
 			screenReg.textFields();
 			pantalla=3;
-		
 		}
+		//DE LOG IN A HOME
 		if(pantalla==2&&(527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
 			screenLog.hide();
-			
 			pantalla=4;
 		}
 		if(pantalla==4&&(808>mouseX&&mouseX>695)&&(438>mouseY&&mouseY>404)) {
+			//DE HOME A LISTA
 			pantalla=12;
 		}
+		//DE HOME A INTERCONTINENTAL
 		if(pantalla==4&&(206>mouseX&&mouseX>93)&&(438>mouseY&&mouseY>404)) {
 			pantalla=5;
 		}
+		//DE HOME A LUNA
 		if(pantalla==4&&(406>mouseX&&mouseX>296)&&(438>mouseY&&mouseY>404)) {
 			pantalla=6;
 		}
+		//DE HOME A MARTE
 		if(pantalla==4&&(606>mouseX&&mouseX>491)&&(438>mouseY&&mouseY>404)) {
 			pantalla=7;
 		}
-		if((pantalla==5||pantalla==6||pantalla==7)&&(130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+		//REGRESAR AL HOME
+		if((pantalla==5||pantalla==6||pantalla==7||pantalla==12)&&(130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
 			pantalla=4;
 		}
+		//DE CUALQUIER VIAJE A AÑADIR CONTACTO
+		if((pantalla==5||pantalla==6||pantalla==7)&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+			screenRcont.textFields();
+			pantalla=8;
+		}
+		//DE INTERCONTINENTAL A COMPRAR
+		if(pantalla==5&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+			pantalla=9;
+		}
+		//DE LUNA A COMPRAR
+		if(pantalla==6&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+			pantalla=9;
+		}
+		//DE MARTE A COMPRAR
+		if(pantalla==7&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+			pantalla=9;
+		}
+		
 		//regC();
 				//para vaciar el texto de los cuadros
 				//clear();
