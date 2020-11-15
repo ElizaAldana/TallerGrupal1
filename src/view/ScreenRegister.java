@@ -65,12 +65,12 @@ public class ScreenRegister {
 		public void drawReg() {
 			app.imageMode(PConstants.CORNER);
 			app.image(register,0,0,app.width,app.height);
+			if((532>app.mouseX&&app.mouseX>378)&&(467>app.mouseY&&app.mouseY>416)){
+				app.imageMode(PConstants.CORNER);
+				app.image(button3,0,0,app.width,app.height);
+				}
 		}
-		public void drawButton() {
-			app.imageMode(PConstants.CORNER);
-			app.image(button3,0,0,app.width,app.height);
-		}
-			
+		
 		public void regU() {
 			
 		name = cp5.get(Textfield.class,"name").getText();
