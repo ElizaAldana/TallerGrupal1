@@ -49,8 +49,27 @@ public class Logic {
 	}
 
 
-	public void sortList(char s) {
-		switch (s) { 
+	public void sortList() {
+		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 80 && app.mouseY < 122) {
+			Collections.sort(contacts);
+		}
+		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 137 && app.mouseY < 191) {
+			Collections.sort(contacts,lastn);
+		}
+		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 215 && app.mouseY < 257) {
+			Collections.sort(contacts,email);
+		}
+		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 293 && app.mouseY < 323) {
+			Collections.sort(contacts,nation);
+		}
+		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 361 && app.mouseY < 393) {
+			Collections.sort(contacts, phone);
+		}
+		
+		//repetir 
+		
+		
+		/*switch (s) { 
 		case 'c':
 			Collections.sort(contacts);
 			break;
@@ -68,7 +87,7 @@ public class Logic {
 		break;
 		default:
 			break;
-		}
+		}*/
 	}
 	
 	public LinkedList<Contact> getList() {

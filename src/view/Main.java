@@ -2,6 +2,9 @@ package view;
 
 import controller.Controller;
 import processing.core.PApplet;
+
+import java.util.Collections;
+
 import controlP5.*;
 import processing.core.PFont;
 import processing.core.PImage;
@@ -28,6 +31,8 @@ public class Main extends PApplet {
 	ScreenRegCard screenRcard;
 	ScreenBuyFinish screenBuyF;
 	ScreenContacts screenCont;
+	
+	int compareClick;
 	
 	public void settings() {
 		size(900,600);
@@ -103,17 +108,35 @@ public class Main extends PApplet {
 		case 12:
 			screenCont.drawContact();
 			for (int i=0 ;i < control.getList().size() ;i++) {
-				control.getList().get(i).draw(91*i,145);
+				control.getList().get(i).drawName(91,137+(i*50));
+				
+				switch(compareClick) {
+				case 0:
+					control.getList().get(i).drawName(295,137+(i*50));
+					break;
+				case 1:
+					control.getList().get(i).drawApellido(295,137+(i*50));
+					break;
+				case 2:
+					control.getList().get(i).drawEmail(295,137+(i*50));
+					break;
+				case 3:
+					control.getList().get(i).drawPhone(295,137+(i*50));
+					break;
+				case 4:
+					control.getList().get(i).drawNation(295,137+(i*50));
+					break;
 				}
-				break;
+				
+				}
+			
+			break;
 
 		}
 		}
 
 	
-	public void mouseClicked() {
-		//Ordenar contactos
-		
+	public void mouseClicked() {		
 		//Cambio de pantallas
 		switch(pantalla) {
 		case 3:
@@ -215,6 +238,7 @@ public class Main extends PApplet {
 		case 8:
 			if((531>mouseX&&mouseX>378)&&(466>mouseY&&mouseY>416)) {
 				screenRcont.hide();
+				regC();
 				pantalla=12;
 			}
 			
@@ -244,6 +268,11 @@ public class Main extends PApplet {
 			}
 			break;
 		case 12:
+			
+			//Metodo de sort en el caso 12
+			control.sortContact();
+			compareClickdesu();
+			
 			//REGRESAR AL HOME
 			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
 				pantalla=4;
@@ -315,6 +344,24 @@ public class Main extends PApplet {
 	}
 	public void clear() {
 		screenRcont.clear();
+	}
+	
+	public void compareClickdesu() {
+		if(mouseX > 717 && mouseX<848 && mouseY > 80 && mouseY < 122) {
+			compareClick = 0;
+		}
+		if(mouseX > 717 && mouseX<848 && mouseY > 137 && mouseY < 191) {
+			compareClick = 1;
+		}
+		if(mouseX > 717 && mouseX<848 && mouseY > 215 && mouseY < 257) {
+			compareClick = 2;
+		}
+		if(mouseX > 717 && mouseX<848 && mouseY > 293 && mouseY < 323) {
+			compareClick = 3;
+		}
+		if(mouseX > 717 && mouseX<848 && mouseY > 361 && mouseY < 393) {
+			compareClick = 4;
+		}
 	}
 	
 }

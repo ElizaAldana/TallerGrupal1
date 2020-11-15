@@ -36,6 +36,26 @@ private float phone;
 		app.text(this.phone, x, y);
 		y=y-280;
 	}
+	
+	public void drawName(int x, int y) {
+		app.text(this.name, x, y);
+	}
+	
+	public void drawApellido(int x, int y) {
+		app.text(this.lastn, x, y);
+	}
+	
+	public void drawEmail(int x, int y) {
+		app.text(this.email, x, y);
+	}
+	
+	public void drawNation(int x, int y) {
+		app.text(this.nation, x, y);
+	}
+	
+	public void drawPhone(int x, int y) {
+		app.text(this.phone, x, y);
+	}
 
 
 	public PApplet getApp() {
