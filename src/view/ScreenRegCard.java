@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import controlP5.ControlP5;
 import controlP5.Label;
 import controlP5.Textfield;
@@ -68,6 +70,38 @@ public class ScreenRegCard {
 			app.image(buttonAny,0,0,app.width,app.height);
 		}
 		}
+	public boolean isNumberNumber() {
+	    try {
+	        double d = Float.parseFloat(cp5.get(Textfield.class,"number").getText());
+	    } catch (NumberFormatException nfe) {
+	    	cp5.get(Textfield.class,"number").clear();
+	    	JOptionPane.showMessageDialog(null, "El número sólo debe contener caracteres numéricos");
+	        return false;
+	    }
+	    return true;
+	}
+	public boolean isNumberCvv() {
+	    try {
+	        double d = Float.parseFloat(cp5.get(Textfield.class,"cvv").getText());
+	    } catch (NumberFormatException nfe) {
+	    	cp5.get(Textfield.class,"cvv").clear();
+	    	JOptionPane.showMessageDialog(null, "El CVV sólo debe contener caracteres numéricos");
+	        return false;
+	    }
+	    return true;
+	}
+	public boolean isAlphabTitular() {
+	    for (int i = 0; i < cp5.get(Textfield.class,"titular").getText().length(); i++) {
+	        char c = cp5.get(Textfield.class,"titular").getText().charAt(i);
+	        if (!Character.isLetter(c)) {
+	        	cp5.get(Textfield.class,"titular").clear();
+	        	JOptionPane.showMessageDialog(null, "El titular sólo debe contener caracteres alfabéticos");
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	
 	public void regCard() {
 		
 		titular = cp5.get(Textfield.class,"titular").getText();
