@@ -82,6 +82,7 @@ public class ScreenRegister {
 		    try {
 		        double d = Float.parseFloat(cp5.get(Textfield.class,"phone").getText());
 		    } catch (NumberFormatException nfe) {
+		    	cp5.get(Textfield.class,"phone").clear();
 		    	JOptionPane.showMessageDialog(null, "El teléfono debe ser un número");
 		        return false;
 		    }
@@ -91,6 +92,7 @@ public class ScreenRegister {
 		    for (int i = 0; i < cp5.get(Textfield.class,"name").getText().length(); i++) {
 		        char c = cp5.get(Textfield.class,"name").getText().charAt(i);
 		        if (!Character.isLetter(c)) {
+		        	cp5.get(Textfield.class,"name").clear();
 		        	JOptionPane.showMessageDialog(null, "El nombre sólo puede tener caracteres alfabéticos");
 		            return false;
 		        }
@@ -101,6 +103,7 @@ public class ScreenRegister {
 		    for (int i = 0; i < cp5.get(Textfield.class,"lastn").getText().length(); i++) {
 		        char c = cp5.get(Textfield.class,"lastn").getText().charAt(i);
 		        if (!Character.isLetter(c)) {
+		        	cp5.get(Textfield.class,"lastn").clear();
 		        	JOptionPane.showMessageDialog(null, "El apellido sólo puede tener caracteres alfabéticos");
 		            return false;
 		        }
@@ -111,6 +114,7 @@ public class ScreenRegister {
 		    for (int i = 0; i < cp5.get(Textfield.class,"nation").getText().length(); i++) {
 		        char c = cp5.get(Textfield.class,"nation").getText().charAt(i);
 		        if (!Character.isLetter(c)) {
+		        	cp5.get(Textfield.class,"nation").clear();
 		        	JOptionPane.showMessageDialog(null, "La nacionalidad sólo puede tener caracteres alfabéticos");
 		            return false;
 		        }
