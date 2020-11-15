@@ -76,6 +76,23 @@ public class ScreenRegister {
 				Label labelPa = cp5.get(Textfield.class,"password").getCaptionLabel();
 				labelPa.hide();
 		}
+		public boolean isNumber() {
+		    try {
+		        double d = Float.parseFloat(cp5.get(Textfield.class,"phone").getText());
+		    } catch (NumberFormatException nfe) {
+		        return false;
+		    }
+		    return true;
+		}
+		public boolean isAlphab(String word) {
+		    for (int i = 0; i < word.length(); i++) {
+		        char c = word.charAt(i);
+		        if (!Character.isLetter(c)) {
+		            return false;
+		        }
+		    }
+		    return true;
+		}
 		public void drawReg() {
 			app.imageMode(PConstants.CORNER);
 			app.image(register,0,0,app.width,app.height);

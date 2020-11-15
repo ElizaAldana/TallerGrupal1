@@ -5,6 +5,8 @@ import processing.core.PApplet;
 
 import java.util.Collections;
 
+import javax.swing.JOptionPane;
+
 import controlP5.*;
 import processing.core.PFont;
 import processing.core.PImage;
@@ -164,11 +166,18 @@ public class Main extends PApplet {
 		switch(pantalla) {
 		case 3:
 			//DE REGISTER A LOG IN
+			
+				
+			
 			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)) {
+				if(screenReg.isNumber()) {
+				screenReg.regU();
 				screenReg.hide();
 				screenLog.textFields();
 				pantalla=2;
+			}else{JOptionPane.showMessageDialog(null, "Teléfono debe ser un número");
 			}
+				}
 			break;
 		case 2:
 			//DE LOG IN A REGISTER
