@@ -166,9 +166,6 @@ public class Main extends PApplet {
 		switch(pantalla) {
 		case 3:
 			//DE REGISTER A LOG IN
-			
-				
-			
 			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)) {
 				if(screenReg.isNumber()&&screenReg.isAlphabName()&&screenReg.isAlphabLastn()&&screenReg.isAlphabNation()) {
 				screenReg.regU();
@@ -185,16 +182,14 @@ public class Main extends PApplet {
 				screenReg.textFields();
 				pantalla=3;
 			}
-				//DE LOG IN A HOME
-				if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
-					screenLog.hide();
-					pantalla=4;
+			//DE LOG IN A HOME
+			//aca debo poner la cosa para que ingrese con el login lo de register
+			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+				screenLog.hide();
+				pantalla=4;
+					
 					}
-				//DE LOG IN A HOME
-				if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
-					screenLog.hide();
-					pantalla=4;
-				}
+				
 			break;
 		case 1:
 			//DE SPLASH A LOG IN
@@ -318,22 +313,6 @@ public class Main extends PApplet {
 			
 		}
 
-		//regC();
-				//para vaciar el texto de los cuadros
-				//clear();
-		//para esconder los cuadros - usar en los cambios de pantalla
-				//hide();
-	}
-	
-	//Activar cuando estén las pantallas
-		/*if(mouseY>450&&mouseX<width/2) {
-		regU();
-		clear();
-	}
-		if(mouseY>450&&mouseX<width/2) {
-		hide();
-	}
-	}*/
 	
 		//funcion para registrar contactos
 		public void regC() {
@@ -351,20 +330,7 @@ public class Main extends PApplet {
 		control.regC(name,lastn,email,nation,phone);
 		}
 		
-		//Esto también para cuando esté la pantalla
-		/*public void regU() {
-		screenReg.regU();
-		String 
-		name = screenReg.getName(),
-		lastn = screenReg.getLastn(),
-		email = screenReg.getLastn(),
-		nation = screenReg.getNation(),
-		password = screenReg.getPassword();
-		float phone = screenReg.getPhone();
-		
-		control.regU(name, lastn, email, nation, phone, password);
-		}
-	*/
+	
 	public void LogIn() {
 		screenLog.logIn(this);
 	}

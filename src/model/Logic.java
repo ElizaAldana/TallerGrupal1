@@ -30,7 +30,6 @@ public class Logic {
 		
 		
 		
-		
 	}
 	
 	public void userReg(String name, String lastn, String email, String nation, float phone, String password){
@@ -68,28 +67,6 @@ public class Logic {
 			Collections.sort(contacts, phone);
 		}
 		
-		//repetir 
-		
-		
-		/*switch (s) { 
-		case 'c':
-			Collections.sort(contacts);
-			break;
-		case 'l':
-			Collections.sort(contacts,lastn);
-			break;
-		case 'e':
-			Collections.sort(contacts,email);
-			break;
-		case 'n':
-			Collections.sort(contacts,nation);
-		break;
-		case 'p':
-			Collections.sort(contacts, phone);
-		break;
-		default:
-			break;
-		}*/
 	}
 	
 	public LinkedList<Contact> getList() {

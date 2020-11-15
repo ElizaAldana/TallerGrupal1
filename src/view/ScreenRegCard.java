@@ -47,6 +47,7 @@ public class ScreenRegCard {
 	     .setSize(333,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
+		 
 	 //Esconder las etiquetas
 		Label labelT = cp5.get(Textfield.class,"titular").getCaptionLabel();
 		labelT.hide();
