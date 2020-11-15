@@ -20,11 +20,7 @@ public class ScreenRegCard {
 		this.app = app;
 		cp5 = new ControlP5(app);
 		regiCard = app.loadImage("pngs/10.png");
-		buttonAny = app.loadImage("pngs/buttons/10b.png");
-		
-			
-			//cambiar las coordenadas para que den con los espacios de los png
-			
+		buttonAny = app.loadImage("pngs/buttons/10b.png");				
 		}
 			
 	public void textFields() {

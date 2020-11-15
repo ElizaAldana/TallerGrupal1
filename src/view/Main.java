@@ -14,6 +14,7 @@ public class Main extends PApplet {
 		PApplet.main(Main.class.getName());
 	}
 	int pantalla;
+	int contactos;
 	PImage splash;
 	Controller control;
 	ControlP5 cp5;
@@ -35,6 +36,7 @@ public class Main extends PApplet {
 	
 	public void setup() {
 		pantalla=1;
+		contactos=1;
 		splash= loadImage("pngs/1.png");
 		PFont font = createFont("arial",20);
 		 textFont(font);
@@ -55,7 +57,7 @@ public class Main extends PApplet {
 		//System.out.println(pantalla);
 		System.out.println(mouseX);
 		System.out.println(mouseY);
-		//text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
+		
 		switch(pantalla) {
 		case 1:
 			//SPLASH SCREEN
@@ -100,30 +102,19 @@ public class Main extends PApplet {
 			break;
 		case 12:
 			screenCont.drawContact();
-			break;
+			for (int i=0 ;i < control.getList().size() ;i++) {
+				control.getList().get(i).draw(91*i,145);
+				}
+				break;
+
 		}
-		/*background(250);
-		
-		fill(255,0,0);
-		rect(0,450,width/2,100);
-		
-		fill(0,0,255);
-		rect(width/2,450,width/2,100);
-		
-		
-		
-		
-		
-		for (int i=0 ;i < control.getList().size() ;i++) {
-			control.getList().get(i).draw(150*i,100);
-			}
-			fill(0);
-			text("esconder",width/2,500);
-			text("registrar",0,500);*/
 		}
+
+	
 	public void mouseClicked() {
-		//Cambio de pantallas
+		//Ordenar contactos
 		
+		//Cambio de pantallas
 		switch(pantalla) {
 		case 3:
 			//DE REGISTER A LOG IN
@@ -265,24 +256,7 @@ public class Main extends PApplet {
 			break;
 			
 		}
-		
-		
-				
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		//regC();
 				//para vaciar el texto de los cuadros
 				//clear();
@@ -342,9 +316,5 @@ public class Main extends PApplet {
 	public void clear() {
 		screenRcont.clear();
 	}
-	public void keyPressed() {
-		control.sortContact(key);
-	}	
-	
 	
 }
