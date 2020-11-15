@@ -26,6 +26,7 @@ public class Main extends PApplet {
 	ScreenBuy screenBuy;
 	ScreenRegCard screenRcard;
 	ScreenBuyFinish screenBuyF;
+	ScreenContacts screenCont;
 	
 	public void settings() {
 		size(900,600);
@@ -44,6 +45,7 @@ public class Main extends PApplet {
 		screenHome = new ScreenHome(this);
 		screenInf = new ScreenInfo(this);
 		screenBuy = new ScreenBuy(this);
+		screenCont = new ScreenContacts(this);
 		screenRcard = new ScreenRegCard(this);
 		screenBuyF = new ScreenBuyFinish(this);
 		control = new Controller(this,cp5);
@@ -97,7 +99,7 @@ public class Main extends PApplet {
 			screenBuyF.drawBuyF();
 			break;
 		case 12:
-			
+			screenCont.drawContact();
 			break;
 		}
 		/*background(250);
@@ -121,78 +123,165 @@ public class Main extends PApplet {
 		}
 	public void mouseClicked() {
 		//Cambio de pantallas
-		//DE LOG IN A REGISTER
-				if(pantalla==2&&(505>mouseX&&mouseX>394)&&(473>mouseY&&mouseY>440)) {
-					screenLog.hide();
-					screenReg.textFields();
-					pantalla=3;
-				}
+		
+		switch(pantalla) {
+		case 3:
+			//DE REGISTER A LOG IN
+			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)) {
+				screenReg.hide();
+				screenLog.textFields();
+				pantalla=2;
+			}
+			break;
+		case 2:
+			//DE LOG IN A REGISTER
+			if((505>mouseX&&mouseX>394)&&(473>mouseY&&mouseY>440)) {
+				screenLog.hide();
+				screenReg.textFields();
+				pantalla=3;
+			}
 				//DE LOG IN A HOME
-				if(pantalla==2&&(527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+				if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+					screenLog.hide();
+					pantalla=4;
+					}
+				//DE LOG IN A HOME
+				if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
 					screenLog.hide();
 					pantalla=4;
 				}
-		//DE SPLASH A LOG IN
-		if(pantalla==1) {
-		screenLog.textFields();	
-		pantalla=2;	
+			break;
+		case 1:
+			//DE SPLASH A LOG IN
+			screenLog.textFields();	
+			pantalla=2;	
+			break;
+		case 4:
+			//DE HOME A LISTA
+			if((808>mouseX&&mouseX>695)&&(438>mouseY&&mouseY>404)) {
+				pantalla=12;
+			}
+			//DE HOME A INTERCONTINENTAL
+			if((206>mouseX&&mouseX>93)&&(438>mouseY&&mouseY>404)) {
+				pantalla=5;
+			}
+			//DE HOME A LUNA
+			if((406>mouseX&&mouseX>296)&&(438>mouseY&&mouseY>404)) {
+				pantalla=6;
+			}
+			//DE HOME A MARTE
+			if((606>mouseX&&mouseX>491)&&(438>mouseY&&mouseY>404)) {
+				pantalla=7;
+			}
+			break;
+		case 5:
+			//REGRESAR AL HOME
+			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+				pantalla=4;
+			}
+			//DE CUALQUIER VIAJE A AÑADIR CONTACTO
+			if((366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+				screenRcont.textFields();
+				pantalla=8;
+			}
+			//DE INTERCONTINENTAL A COMPRAR
+			if((640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
+				pantalla=9;
+			}
+			//DE INTERCONTINENTAL A COMPRAR
+			if((640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
+				pantalla=9;
+			}
+			break;
+		case 6:
+			//REGRESAR AL HOME
+			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+				pantalla=4;
+			}
+			if((366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+				screenRcont.textFields();
+				pantalla=8;
+			}
+			//DE LUNA A COMPRAR
+			if((640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
+				pantalla=9;
+			}
+			break;
+		case 7:
+			//REGRESAR AL HOME
+			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+				pantalla=4;
+			}
+			if((366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+				screenRcont.textFields();
+				pantalla=8;
+			}
+			//DE MARTE A COMPRAR
+			if((640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
+				pantalla=9;
+			}
+			break;
+		case 8:
+			if((531>mouseX&&mouseX>378)&&(466>mouseY&&mouseY>416)) {
+				screenRcont.hide();
+				pantalla=12;
+			}
+			
+			break;
+		case 9:
+			//DE COMPRAR A AÑADIR TARJETA
+			if((678>mouseX&&mouseX>538)&&(307>mouseY&&mouseY>259)) {
+				screenRcard.textFields();
+				pantalla=10;
+			}
+			//DE COMPRAR A FINALIZAR COMPRA
+			if((518>mouseX&&mouseX>379)&&(472>mouseY&&mouseY>432)) {
+				pantalla=11;
+			}
+			break;
+		case 10:
+			//DE AÑADIR TARJETA A COMPRAR
+			if((543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
+				screenRcard.hide();
+				pantalla=9;
+			}
+			break;
+		case 11:
+			//DE FINALIZAR COMPRA A HOME
+			if((741>mouseX&&mouseX>571)&&(520>mouseY&&mouseY>466)) {
+				pantalla=4;
+			}
+			break;
+		case 12:
+			//REGRESAR AL HOME
+			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+				pantalla=4;
+			}
+			//AÑADIR CONTACTO
+			if((866>mouseX&&mouseX>716)&&(514>mouseY&&mouseY>465)) {
+				screenRcont.textFields();
+				pantalla=8;
+			}
+			break;
+			
 		}
 		
-		if(pantalla==4&&(808>mouseX&&mouseX>695)&&(438>mouseY&&mouseY>404)) {
-			//DE HOME A LISTA
-			pantalla=12;
-		}
-		//DE HOME A INTERCONTINENTAL
-		if(pantalla==4&&(206>mouseX&&mouseX>93)&&(438>mouseY&&mouseY>404)) {
-			pantalla=5;
-		}
-		//DE HOME A LUNA
-		if(pantalla==4&&(406>mouseX&&mouseX>296)&&(438>mouseY&&mouseY>404)) {
-			pantalla=6;
-		}
-		//DE HOME A MARTE
-		if(pantalla==4&&(606>mouseX&&mouseX>491)&&(438>mouseY&&mouseY>404)) {
-			pantalla=7;
-		}
-		//REGRESAR AL HOME
-		if((pantalla==5||pantalla==6||pantalla==7||pantalla==12)&&(130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
-			pantalla=4;
-		}
-		//DE CUALQUIER VIAJE A AÑADIR CONTACTO
-		if((pantalla==5||pantalla==6||pantalla==7)&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
-			screenRcont.textFields();
-			pantalla=8;
-		}
-		//DE INTERCONTINENTAL A COMPRAR
-		if(pantalla==5&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
-			pantalla=9;
-		}
-		//DE LUNA A COMPRAR
-		if(pantalla==6&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
-			pantalla=9;
-		}
-		//DE MARTE A COMPRAR
-		if(pantalla==7&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
-			pantalla=9;
-		}
-		//DE COMPRAR A AÑADIR TARJETA
-		if(pantalla==9&&(678>mouseX&&mouseX>538)&&(307>mouseY&&mouseY>259)) {
-			screenRcard.textFields();
-			pantalla=10;
-		}
-		//DE COMPRAR A FINALIZAR COMPRA
-		if(pantalla==9&&(518>mouseX&&mouseX>379)&&(472>mouseY&&mouseY>432)) {
-			pantalla=11;
-		}
-		//DE AÑADIR TARJETA A COMPRAR
-		if(pantalla==10&&(543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
-			screenRcard.hide();
-			pantalla=9;
-		}
-		//DE FINALIZAR COMPRA A HOME
-		if(pantalla==11&&(741>mouseX&&mouseX>571)&&(520>mouseY&&mouseY>466)) {
-			pantalla=4;
-		}
+		
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		//regC();
 				//para vaciar el texto de los cuadros
