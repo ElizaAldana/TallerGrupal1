@@ -22,6 +22,7 @@ public class Main extends PApplet {
 	ScreenLogIn screenLog;
 	ScreenRegister screenReg;
 	ScreenHome screenHome;
+	ScreenInfo screenInf;
 	
 	public void settings() {
 		size(900,600);
@@ -38,6 +39,7 @@ public class Main extends PApplet {
 		screenReg = new ScreenRegister(this);
 		screenLog = new ScreenLogIn(this);
 		screenHome = new ScreenHome(this);
+		screenInf = new ScreenInfo(this);
 		control = new Controller(this,cp5);
 	}
 	
@@ -63,6 +65,18 @@ public class Main extends PApplet {
 			//HOME SCREEN
 		screenHome.drawHome();
 		break;
+		case 5:
+			screenInf.drawInf(0);
+			break;
+		case 6:
+			screenInf.drawInf(1);
+			break;
+		case 7:
+			screenInf.drawInf(2);
+			break;
+		case 12:
+			
+			break;
 		}
 		/*background(250);
 		
@@ -84,6 +98,7 @@ public class Main extends PApplet {
 			text("registrar",0,500);*/
 		}
 	public void mouseClicked() {
+		//Cambio de pantallas
 		if(pantalla==1) {
 		
 		screenLog.textFields();	
@@ -99,9 +114,22 @@ public class Main extends PApplet {
 			screenLog.hide();
 			
 			pantalla=4;
-		
 		}
-		
+		if(pantalla==4&&(808>mouseX&&mouseX>695)&&(438>mouseY&&mouseY>404)) {
+			pantalla=12;
+		}
+		if(pantalla==4&&(206>mouseX&&mouseX>93)&&(438>mouseY&&mouseY>404)) {
+			pantalla=5;
+		}
+		if(pantalla==4&&(406>mouseX&&mouseX>296)&&(438>mouseY&&mouseY>404)) {
+			pantalla=6;
+		}
+		if(pantalla==4&&(606>mouseX&&mouseX>491)&&(438>mouseY&&mouseY>404)) {
+			pantalla=7;
+		}
+		if((pantalla==5||pantalla==6||pantalla==7)&&(130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
+			pantalla=4;
+		}
 		//regC();
 				//para vaciar el texto de los cuadros
 				//clear();
