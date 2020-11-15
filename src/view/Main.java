@@ -111,22 +111,23 @@ public class Main extends PApplet {
 		}
 	public void mouseClicked() {
 		//Cambio de pantallas
+		//DE LOG IN A REGISTER
+				if(pantalla==2&&(505>mouseX&&mouseX>394)&&(473>mouseY&&mouseY>440)) {
+					screenLog.hide();
+					screenReg.textFields();
+					pantalla=3;
+				}
+				//DE LOG IN A HOME
+				if(pantalla==2&&(527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+					screenLog.hide();
+					pantalla=4;
+				}
 		//DE SPLASH A LOG IN
 		if(pantalla==1) {
 		screenLog.textFields();	
 		pantalla=2;	
 		}
-		//DE LOG IN A REGISTER
-		if(pantalla==2&&(505>mouseX&&mouseX>394)&&(473>mouseY&&mouseY>440)) {
-			screenLog.hide();
-			screenReg.textFields();
-			pantalla=3;
-		}
-		//DE LOG IN A HOME
-		if(pantalla==2&&(527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
-			screenLog.hide();
-			pantalla=4;
-		}
+		
 		if(pantalla==4&&(808>mouseX&&mouseX>695)&&(438>mouseY&&mouseY>404)) {
 			//DE HOME A LISTA
 			pantalla=12;
@@ -153,15 +154,15 @@ public class Main extends PApplet {
 			pantalla=8;
 		}
 		//DE INTERCONTINENTAL A COMPRAR
-		if(pantalla==5&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+		if(pantalla==5&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
 			pantalla=9;
 		}
 		//DE LUNA A COMPRAR
-		if(pantalla==6&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+		if(pantalla==6&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
 			pantalla=9;
 		}
 		//DE MARTE A COMPRAR
-		if(pantalla==7&&(366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
+		if(pantalla==7&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
 			pantalla=9;
 		}
 		

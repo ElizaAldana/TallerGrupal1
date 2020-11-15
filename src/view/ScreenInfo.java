@@ -35,12 +35,12 @@ public class ScreenInfo {
 				app.imageMode(PConstants.CORNER);
 				app.image(infoI,0,0,app.width,app.height);
 				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
-					//Comprar Button
+					//Añadir Contacto Button
 					app.imageMode(PConstants.CORNER);
 					app.image(buttonAny,0,0,app.width,app.height);
 				}
 					if((640>app.mouseX&&app.mouseX>490)&&(526>app.mouseY&&app.mouseY>478)){
-						//Añadir Contacto Button
+						//Comprar Button
 						app.imageMode(PConstants.CORNER);
 						app.image(buttonCom,0,0,app.width,app.height);
 				}
