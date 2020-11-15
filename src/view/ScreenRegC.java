@@ -3,7 +3,6 @@ package view;
 import controlP5.ControlP5;
 import controlP5.Textfield;
 import processing.core.PApplet;
-import processing.core.PConstants;
 import processing.core.PFont;
 import processing.core.PImage;
 
@@ -11,7 +10,6 @@ public class ScreenRegC {
 
 	PApplet app;
 	PImage regcon;
-	PImage buttonAny;
 	ControlP5 cp5;
 	String name,lastn, email, nation;
 	float phone;
@@ -22,20 +20,10 @@ public class ScreenRegC {
 		cp5 = new ControlP5(app);
 		//PFont font = app.createFont("arial",20);
 		regcon= app.loadImage("pngs/8.png");
-		buttonAny= app.loadImage("pngs/buttons/8b.png");
 		
 		
 		
-	}
-	public void drawRegC() {	
-		app.imageMode(PConstants.CORNER);
-		app.image(regcon,0,0,app.width,app.height);
-		if((531>app.mouseX&&app.mouseX>378)&&(466>app.mouseY&&app.mouseY>416)){
-			//Añadir  Button
-			app.imageMode(PConstants.CORNER);
-			app.image(buttonAny,0,0,app.width,app.height);
-	}
-	}
+	}	
 	public void textFields() {
 		cp5.addTextfield("name")
 		  .setPosition(50,0)
