@@ -1,6 +1,7 @@
 package view;
 
 import controlP5.ControlP5;
+import controlP5.Label;
 import controlP5.Textfield;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -61,6 +62,19 @@ public class ScreenRegister {
 		     .setSize(250,60)
 		     .setFont(app.createFont("arial",20))
 		     .setAutoClear(false);
+			//Esconder las etiquetas
+				Label labelN = cp5.get(Textfield.class,"name").getCaptionLabel();
+				labelN.hide();
+				Label labelL = cp5.get(Textfield.class,"lastn").getCaptionLabel();
+				labelL.hide();
+				Label labelE = cp5.get(Textfield.class,"email").getCaptionLabel();
+				labelE.hide();
+				Label labelNa = cp5.get(Textfield.class,"nation").getCaptionLabel();
+				labelNa.hide();
+				Label labelP = cp5.get(Textfield.class,"phone").getCaptionLabel();
+				labelP.hide();
+				Label labelPa = cp5.get(Textfield.class,"password").getCaptionLabel();
+				labelPa.hide();
 		}
 		public void drawReg() {
 			app.imageMode(PConstants.CORNER);

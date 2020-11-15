@@ -24,6 +24,8 @@ public class Main extends PApplet {
 	ScreenHome screenHome;
 	ScreenInfo screenInf;
 	ScreenBuy screenBuy;
+	ScreenRegCard screenRcard;
+	ScreenBuyFinish screenBuyF;
 	
 	public void settings() {
 		size(900,600);
@@ -42,13 +44,15 @@ public class Main extends PApplet {
 		screenHome = new ScreenHome(this);
 		screenInf = new ScreenInfo(this);
 		screenBuy = new ScreenBuy(this);
+		screenRcard = new ScreenRegCard(this);
+		screenBuyF = new ScreenBuyFinish(this);
 		control = new Controller(this,cp5);
 	}
 	
 	public void draw() {
-		System.out.println(pantalla);
-		//System.out.println(mouseX);
-		//System.out.println(mouseY);
+		//System.out.println(pantalla);
+		System.out.println(mouseX);
+		System.out.println(mouseY);
 		//text(mouseX+","+mouseY,mouseX,mouseY); //To know the coordinates
 		switch(pantalla) {
 		case 1:
@@ -85,6 +89,12 @@ public class Main extends PApplet {
 			break;
 		case 9:
 			screenBuy.drawBuy();
+			break;
+		case 10:
+			screenRcard.drawCard();
+			break;
+		case 11:
+			screenBuyF.drawBuyF();
 			break;
 		case 12:
 			
@@ -164,6 +174,24 @@ public class Main extends PApplet {
 		//DE MARTE A COMPRAR
 		if(pantalla==7&&(640>mouseX&&mouseX>490)&&(526>mouseY&&mouseY>478)) {
 			pantalla=9;
+		}
+		//DE COMPRAR A AÑADIR TARJETA
+		if(pantalla==9&&(678>mouseX&&mouseX>538)&&(307>mouseY&&mouseY>259)) {
+			screenRcard.textFields();
+			pantalla=10;
+		}
+		//DE COMPRAR A FINALIZAR COMPRA
+		if(pantalla==9&&(518>mouseX&&mouseX>379)&&(472>mouseY&&mouseY>432)) {
+			pantalla=11;
+		}
+		//DE AÑADIR TARJETA A COMPRAR
+		if(pantalla==10&&(543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
+			screenRcard.hide();
+			pantalla=9;
+		}
+		//DE FINALIZAR COMPRA A HOME
+		if(pantalla==11&&(741>mouseX&&mouseX>571)&&(520>mouseY&&mouseY>466)) {
+			pantalla=4;
 		}
 		
 		//regC();

@@ -1,14 +1,17 @@
 package view;
 
 import controlP5.ControlP5;
+import controlP5.Label;
 import controlP5.Textfield;
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PImage;
 
 public class ScreenRegCard {
 
 	PApplet app;
 	PImage regiCard;
+	PImage buttonAny;
 	ControlP5 cp5;
 	String titular, date;
 	int number, cvv;
@@ -17,36 +20,58 @@ public class ScreenRegCard {
 		this.app = app;
 		cp5 = new ControlP5(app);
 		regiCard = app.loadImage("pngs/10.png");
+		buttonAny = app.loadImage("pngs/buttons/10b.png");
 		
 			
 			//cambiar las coordenadas para que den con los espacios de los png
-			cp5.addTextfield("titular")
-			  .setPosition(50,0)
-			  .setSize(250,60)
-			  .setFont(app.createFont("arial",20))
-			  .setAutoClear(false);
-			 
-			 cp5.addTextfield("date")
-		     .setPosition(50,100)
-		     .setSize(250,60)
-		     .setFont(app.createFont("arial",20))
-		     .setAutoClear(false);
-			 
-			 cp5.addTextfield("number")
-		     .setPosition(50,200)
-		     .setSize(250,60)
-		     .setFont(app.createFont("arial",20))
-		     .setAutoClear(false);
-			 
-			 cp5.addTextfield("cvv")
-		     .setPosition(50,300)
-		     .setSize(250,60)
-		     .setFont(app.createFont("arial",20))
-		     .setAutoClear(false);
+			
 		}
 			
+	public void textFields() {
+		cp5.addTextfield("titular")
+		  .setPosition(50,0)
+		  .setSize(250,60)
+		  .setFont(app.createFont("arial",20))
+		  .setAutoClear(false);
+		 
+		 cp5.addTextfield("date")
+	     .setPosition(50,100)
+	     .setSize(250,60)
+	     .setFont(app.createFont("arial",20))
+	     .setAutoClear(false);
+		 
+		 cp5.addTextfield("number")
+	     .setPosition(50,200)
+	     .setSize(250,60)
+	     .setFont(app.createFont("arial",20))
+	     .setAutoClear(false);
+		 
+		 cp5.addTextfield("cvv")
+	     .setPosition(50,300)
+	     .setSize(250,60)
+	     .setFont(app.createFont("arial",20))
+	     .setAutoClear(false);
+	 //Esconder las etiquetas
+		Label labelT = cp5.get(Textfield.class,"titular").getCaptionLabel();
+		labelT.hide();
+		Label labelD = cp5.get(Textfield.class,"date").getCaptionLabel();
+		labelD.hide();
+		Label labelN = cp5.get(Textfield.class,"number").getCaptionLabel();
+		labelN.hide();
+		Label labelC = cp5.get(Textfield.class,"cvv").getCaptionLabel();
+		labelC.hide();
+	}
 	
 	
+	public void drawCard() {
+		app.imageMode(PConstants.CORNER);
+		app.image(regiCard,0,0,app.width,app.height);
+		if((543>app.mouseX&&app.mouseX>349)&&(440>app.mouseY&&app.mouseY>380)){
+			//Añadir tarjeta Button
+			app.imageMode(PConstants.CORNER);
+			app.image(buttonAny,0,0,app.width,app.height);
+		}
+		}
 	public void regCard() {
 		
 		titular = cp5.get(Textfield.class,"titular").getText();

@@ -1,6 +1,7 @@
 package view;
 
 import controlP5.ControlP5;
+import controlP5.Label;
 import controlP5.Textfield;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -37,11 +38,17 @@ public class ScreenLogIn {
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
 		
+		
 		cp5.addTextfield("Password")
 		  .setPosition(100,0)
 		  .setSize(250,60)
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
+		//Esconder las etiquetas
+		Label labelE = cp5.get(Textfield.class,"Email").getCaptionLabel();
+		labelE.hide();
+		Label labelPa = cp5.get(Textfield.class,"Password").getCaptionLabel();
+		labelPa.hide();
 	}
 	public void hide() {
 		cp5.get("Email").hide();
