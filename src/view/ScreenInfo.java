@@ -48,12 +48,12 @@ public class ScreenInfo {
 			case 1:
 				app.imageMode(PConstants.CORNER);
 				app.image(infoL,0,0,app.width,app.height);
-				if((640>app.mouseX&&app.mouseX>490)&&(526>app.mouseY&&app.mouseY>478)){
+				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
 					//Comprar Button
 					app.imageMode(PConstants.CORNER);
 					app.image(buttonAny,0,0,app.width,app.height);
 				}
-					if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
+					if((640>app.mouseX&&app.mouseX>490)&&(526>app.mouseY&&app.mouseY>478)){
 						//Añadir Contacto Button
 						app.imageMode(PConstants.CORNER);
 						app.image(buttonCom,0,0,app.width,app.height);
@@ -62,12 +62,12 @@ public class ScreenInfo {
 			case 2:
 				app.imageMode(PConstants.CORNER);
 				app.image(infoM,0,0,app.width,app.height);
-				if((640>app.mouseX&&app.mouseX>490)&&(526>app.mouseY&&app.mouseY>478)){
+				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
 					//Comprar Button
 					app.imageMode(PConstants.CORNER);
 					app.image(buttonAny,0,0,app.width,app.height);
 				}
-					if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
+					if((640>app.mouseX&&app.mouseX>490)&&(526>app.mouseY&&app.mouseY>478)){
 						//Añadir Contacto Button
 						app.imageMode(PConstants.CORNER);
 						app.image(buttonCom,0,0,app.width,app.height);
