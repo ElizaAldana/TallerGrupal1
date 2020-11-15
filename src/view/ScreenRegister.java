@@ -28,38 +28,38 @@ public class ScreenRegister {
 	}
 		public void textFields() {
 			cp5.addTextfield("name")
-			  .setPosition(50,0)
-			  .setSize(250,60)
+			  .setPosition(67,136)
+			  .setSize(332 ,44)
 			  .setFont(app.createFont("arial",20))
 			  .setAutoClear(false);
 			 
-			 cp5.addTextfield("lastn")
-		     .setPosition(50,100)
-		     .setSize(250,60)
-		     .setFont(app.createFont("arial",20))
-		     .setAutoClear(false);
-			 
 			 cp5.addTextfield("email")
-		     .setPosition(50,200)
-		     .setSize(250,60)
-		     .setFont(app.createFont("arial",20))
-		     .setAutoClear(false);
-			 
-			 cp5.addTextfield("nation")
-		     .setPosition(50,300)
-		     .setSize(250,60)
+		     .setPosition(67,231)
+		     .setSize(332,46)
 		     .setFont(app.createFont("arial",20))
 		     .setAutoClear(false);
 			 
 			 cp5.addTextfield("phone")
-		     .setPosition(50,400)
-		     .setSize(250,60)
+		     .setPosition(67,332)
+		     .setSize(332,44)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("lastn")
+		     .setPosition(502,136)
+		     .setSize(332,44)
+		     .setFont(app.createFont("arial",20))
+		     .setAutoClear(false);
+			 
+			 cp5.addTextfield("nation")
+		     .setPosition(502,232)
+		     .setSize(332,44)
 		     .setFont(app.createFont("arial",20))
 		     .setAutoClear(false);
 			 
 			 cp5.addTextfield("password")
-		     .setPosition(50,500)
-		     .setSize(250,60)
+		     .setPosition(502,331)
+		     .setSize(332,44)
 		     .setFont(app.createFont("arial",20))
 		     .setAutoClear(false);
 			//Esconder las etiquetas

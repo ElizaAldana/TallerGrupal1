@@ -29,26 +29,26 @@ public class ScreenRegCard {
 			
 	public void textFields() {
 		cp5.addTextfield("titular")
-		  .setPosition(50,0)
-		  .setSize(250,60)
+		  .setPosition(67,188)
+		  .setSize(333,44)
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
 		 
+		 cp5.addTextfield("cvv")
+	     .setPosition(501,286)
+	     .setSize(333,44)
+	     .setFont(app.createFont("arial",20))
+	     .setAutoClear(false);
+		 
 		 cp5.addTextfield("date")
-	     .setPosition(50,100)
-	     .setSize(250,60)
+	     .setPosition(67,286)
+	     .setSize(333,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 		 
 		 cp5.addTextfield("number")
-	     .setPosition(50,200)
-	     .setSize(250,60)
-	     .setFont(app.createFont("arial",20))
-	     .setAutoClear(false);
-		 
-		 cp5.addTextfield("cvv")
-	     .setPosition(50,300)
-	     .setSize(250,60)
+	     .setPosition(501,189)
+	     .setSize(333,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 	 //Esconder las etiquetas

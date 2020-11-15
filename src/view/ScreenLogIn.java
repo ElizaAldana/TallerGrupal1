@@ -25,23 +25,20 @@ public class ScreenLogIn {
 		cp5 = new ControlP5(app);
 		
 		
-
-		
-		
 	}
 	public void textFields() {
 		//Nota: Arreglar posición de input field con la imagen de login
 		
 		cp5.addTextfield("Email")
-		  .setPosition(50,0)
-		  .setSize(250,60)
+		  .setPosition(283, 151)
+		  .setSize(335,45)
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
 		
 		
 		cp5.addTextfield("Password")
-		  .setPosition(100,0)
-		  .setSize(250,60)
+		  .setPosition(283,263)
+		  .setSize(335,45)
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
 		//Esconder las etiquetas

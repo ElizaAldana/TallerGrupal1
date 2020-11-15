@@ -39,32 +39,32 @@ public class ScreenRegC {
 	}
 	public void textFields() {
 		cp5.addTextfield("name")
-		  .setPosition(50,0)
-		  .setSize(250,60)
+		  .setPosition(68,162)
+		  .setSize(331,44)
 		  .setFont(app.createFont("arial",20))
 		  .setAutoClear(false);
 		 
 		 cp5.addTextfield("lastn")
-	     .setPosition(50,100)
-	     .setSize(250,60)
+	     .setPosition(501,162)
+	     .setSize(331,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 		 
 		 cp5.addTextfield("email")
-	     .setPosition(50,200)
-	     .setSize(250,60)
+	     .setPosition(68,255)
+	     .setSize(331,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 		 
 		 cp5.addTextfield("nation")
-	     .setPosition(50,300)
-	     .setSize(250,60)
+	     .setPosition(501,255)
+	     .setSize(331,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 		 
 		 cp5.addTextfield("phone")
-	     .setPosition(50,400)
-	     .setSize(250,60)
+	     .setPosition(291,349)
+	     .setSize(331,44)
 	     .setFont(app.createFont("arial",20))
 	     .setAutoClear(false);
 		//Esconder las etiquetas
