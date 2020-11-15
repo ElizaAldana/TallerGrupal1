@@ -170,12 +170,11 @@ public class Main extends PApplet {
 				
 			
 			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)) {
-				if(screenReg.isNumber()) {
+				if(screenReg.isNumber()&&screenReg.isAlphabName()&&screenReg.isAlphabLastn()&&screenReg.isAlphabNation()) {
 				screenReg.regU();
 				screenReg.hide();
 				screenLog.textFields();
 				pantalla=2;
-			}else{JOptionPane.showMessageDialog(null, "Teléfono debe ser un número");
 			}
 				}
 			break;

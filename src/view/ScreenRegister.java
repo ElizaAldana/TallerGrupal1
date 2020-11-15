@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import controlP5.ControlP5;
 import controlP5.Label;
 import controlP5.Textfield;
@@ -80,14 +82,36 @@ public class ScreenRegister {
 		    try {
 		        double d = Float.parseFloat(cp5.get(Textfield.class,"phone").getText());
 		    } catch (NumberFormatException nfe) {
+		    	JOptionPane.showMessageDialog(null, "El teléfono debe ser un número");
 		        return false;
 		    }
 		    return true;
 		}
-		public boolean isAlphab(String word) {
-		    for (int i = 0; i < word.length(); i++) {
-		        char c = word.charAt(i);
+		public boolean isAlphabName() {
+		    for (int i = 0; i < cp5.get(Textfield.class,"name").getText().length(); i++) {
+		        char c = cp5.get(Textfield.class,"name").getText().charAt(i);
 		        if (!Character.isLetter(c)) {
+		        	JOptionPane.showMessageDialog(null, "El nombre sólo puede tener caracteres alfabéticos");
+		            return false;
+		        }
+		    }
+		    return true;
+		}
+		public boolean isAlphabLastn() {
+		    for (int i = 0; i < cp5.get(Textfield.class,"lastn").getText().length(); i++) {
+		        char c = cp5.get(Textfield.class,"lastn").getText().charAt(i);
+		        if (!Character.isLetter(c)) {
+		        	JOptionPane.showMessageDialog(null, "El apellido sólo puede tener caracteres alfabéticos");
+		            return false;
+		        }
+		    }
+		    return true;
+		}
+		public boolean isAlphabNation() {
+		    for (int i = 0; i < cp5.get(Textfield.class,"nation").getText().length(); i++) {
+		        char c = cp5.get(Textfield.class,"nation").getText().charAt(i);
+		        if (!Character.isLetter(c)) {
+		        	JOptionPane.showMessageDialog(null, "La nacionalidad sólo puede tener caracteres alfabéticos");
 		            return false;
 		        }
 		    }
