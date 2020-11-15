@@ -10,6 +10,8 @@ public class ScreenInfo {
 	
 	PApplet app;
 	ControlP5 cp5;
+	String cost;
+	String inf;
 	PImage infoI;
 	PImage infoL;
 	PImage infoM;
@@ -32,6 +34,8 @@ public class ScreenInfo {
 	//Screen changes
 			switch(screenInf) {
 			case 0:
+				cost= "2.500 $";
+				inf= "Viaje Intercontinental";
 				app.imageMode(PConstants.CORNER);
 				app.image(infoI,0,0,app.width,app.height);
 				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
@@ -46,6 +50,9 @@ public class ScreenInfo {
 				}
 			break;
 			case 1:
+				
+				cost= "850.000 $";
+				inf= "Viaje a la Luna";
 				app.imageMode(PConstants.CORNER);
 				app.image(infoL,0,0,app.width,app.height);
 				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
@@ -60,6 +67,8 @@ public class ScreenInfo {
 				}
 			break;
 			case 2:
+				cost= "800.000.000 $";
+				inf= "Viaje a Marte";
 				app.imageMode(PConstants.CORNER);
 				app.image(infoM,0,0,app.width,app.height);
 				if((366>app.mouseX&&app.mouseX>217)&&(526>app.mouseY&&app.mouseY>478)){
@@ -74,6 +83,12 @@ public class ScreenInfo {
 				}
 			break;
 			
-			}
+			}		
 }
+	public String getCost(){
+		return cost;
+	}
+	public String getInfo() {
+		return inf;
+	}
 }
