@@ -283,10 +283,11 @@ public class Main extends PApplet {
 		case 10:
 			//DE AÑADIR TARJETA A COMPRAR
 			if((543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
+				if(screenRcard.isNumberNumber()&&screenRcard.isAlphabTitular()&&screenRcard.isNumberCvv()) {
 				regCard();
 				screenRcard.hide();
 				pantalla=9;
-			}
+			}}
 			break;
 		case 11:
 			//DE FINALIZAR COMPRA A HOME
