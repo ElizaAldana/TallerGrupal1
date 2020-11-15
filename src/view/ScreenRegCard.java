@@ -100,21 +100,12 @@ public class ScreenRegCard {
 
 
 
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
 
 
 	public String getDate() {
 		return date;
 	}
 
-
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 
 
 
@@ -124,10 +115,6 @@ public class ScreenRegCard {
 
 
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
-
 
 
 	public int getCvv() {
@@ -135,10 +122,6 @@ public class ScreenRegCard {
 	}
 
 
-
-	public void setCvv(int cvv) {
-		this.cvv = cvv;
-	}
 
 	
 }

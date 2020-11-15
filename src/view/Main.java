@@ -98,6 +98,17 @@ public class Main extends PApplet {
 			break;
 		case 9:
 			screenBuy.drawBuy();
+			
+			//este if evita que de un erro antes de que "card" sea ingrsado y permite poner un mensaje de que el usuario debe hacerlo
+			if(control.getCard()==null) {
+				text("No has ingresado ninguna targeta", 200, 70);
+			}else {
+				//dibujar los valores de la targeta
+			control.getCard().drawTitular(100, 100);
+			control.getCard().drawDate(150, 100);
+			control.getCard().drawNumber(200, 100);
+			control.getCard().drawCvv(250, 100);
+			}
 			break;
 		case 10:
 			screenRcard.drawCard();
@@ -257,6 +268,7 @@ public class Main extends PApplet {
 		case 10:
 			//DE AÑADIR TARJETA A COMPRAR
 			if((543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
+				regCard();
 				screenRcard.hide();
 				pantalla=9;
 			}
@@ -335,6 +347,20 @@ public class Main extends PApplet {
 	*/
 	public void LogIn() {
 		screenLog.logIn(this);
+	}
+	
+	
+	public void regCard() {
+		
+		screenRcard.regCard();
+		String 
+		titular = screenRcard.getTitular(), 
+		date = screenRcard.getDate();
+		int
+		number = screenRcard.getNumber(),
+		cvv = screenRcard.getCvv();
+		
+		control.regCard(titular, date,number ,cvv );
 	}
 	
 	public void hide() {

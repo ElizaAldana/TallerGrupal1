@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import controlP5.*;
 import model.Logic;
 import model.Contact;
+import model.Card;
 
 
 public class Controller {
@@ -45,6 +46,11 @@ public class Controller {
 	public LinkedList<Contact> getList() {
 		return logic.getList();
 		
+	}
+
+	public Card getCard() {
+		
+		return logic.getCard();
 	}
 	
 	

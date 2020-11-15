@@ -12,6 +12,7 @@ public class Logic {
 	
 	private PApplet app ;
 	public Contact contacto;
+	private Card card;
 	private LinkedList<Contact> contacts;
 	private CompareEmailContact email;
 	private CompareLastNContact lastn;
@@ -26,6 +27,7 @@ public class Logic {
 		this.phone= new ComparePhoneContact();
 		
 		contacts = new LinkedList<Contact>();
+		
 		
 		
 		
@@ -45,7 +47,7 @@ public class Logic {
 	}
 	
 	public void addCard(String titular, String date, int number, int cvv) {
-		Card card = new Card(titular, date, number, cvv);
+		 card = new Card(titular, date, number, cvv,app);
 	}
 
 
@@ -101,4 +103,8 @@ public class Logic {
 	
 			
 }
+
+	public Card getCard() {
+		return card;
+	}
 }
