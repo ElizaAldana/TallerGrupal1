@@ -71,6 +71,18 @@ public class ScreenRegCard {
 			app.image(buttonAny,0,0,app.width,app.height);
 		}
 		}
+	public boolean isNull() {
+		if(cp5.get(Textfield.class,"titular").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"date").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"number").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"cvv").getText().trim().isEmpty())
+	        {
+			JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Woops", JOptionPane.ERROR_MESSAGE);
+	           return true;
+	        }else {
+	        	return false;
+	        }
+	}
 	public boolean isNumberNumber() {
 	    try {
 	        double d = Float.parseFloat(cp5.get(Textfield.class,"number").getText());

@@ -105,7 +105,7 @@ public class Main extends PApplet {
 			text(screenInf.getCost(),186,365);
 			text(screenInf.getInfo(),308,187);
 			if(control.getCard()==null) {
-				text("sin registar", 298, 272);
+				text("Sin registrar", 298, 272);
 			}else {
 				//dibujar los valores de la targeta
 			control.getCard().drawNumber(298, 272);
@@ -117,9 +117,9 @@ public class Main extends PApplet {
 		case 11:
 			screenBuyF.drawBuyF();
 			text(mouseX +","+ mouseY ,mouseX,mouseY);
-			//este if evita que de un erro antes de que "card" sea ingrsado y permite poner un mensaje de que el usuario debe hacerlo
+			//este if evita que de un error antes de que "card" sea ingrsado y permite poner un mensaje de que el usuario debe hacerlo
 			if(control.getCard()==null) {
-				text("No has ingresado ninguna targeta", 200, 70);
+				text("No has ingresado ninguna tarjeta", 200, 70);
 			}else {
 				//dibujar los valores de la targeta
 			control.getCard().drawTitular(295, 152);
@@ -166,7 +166,7 @@ public class Main extends PApplet {
 		case 3:
 			//DE REGISTER A LOG IN
 			if((532>mouseX&&mouseX>378)&&(467>mouseY&&mouseY>416)) {
-				if(screenReg.isNumber()&&screenReg.isAlphabName()&&screenReg.isAlphabLastn()&&screenReg.isAlphabNation()) {
+				if(!screenReg.isNull()&&screenReg.isNumber()&&screenReg.isAlphabName()&&screenReg.isAlphabLastn()&&screenReg.isAlphabNation()) {
 				screenReg.regU();
 				screenReg.hide();
 				screenLog.textFields();
@@ -183,10 +183,11 @@ public class Main extends PApplet {
 			}
 			//DE LOG IN A HOME
 			//aca debo poner la cosa para que ingrese con el login lo de register
-			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357) && screenLog.getEmail().equals(screenReg.getEmail()) 
+				&& screenLog.getPassword().equals(screenReg.getPassword())) {
 				screenLog.hide();
 				pantalla=4;
-					
+				
 					}
 				
 			break;
@@ -218,7 +219,7 @@ public class Main extends PApplet {
 			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
 				pantalla=4;
 			}
-			//DE CUALQUIER VIAJE A AÑADIR CONTACTO
+			//DE CUALQUIER VIAJE A Aï¿½ADIR CONTACTO
 			if((366>mouseX&&mouseX>217)&&(526>mouseY&&mouseY>478)) {
 				screenRcont.textFields();
 				pantalla=8;
@@ -262,14 +263,20 @@ public class Main extends PApplet {
 			break;
 		case 8:
 			if((531>mouseX&&mouseX>378)&&(466>mouseY&&mouseY>416)) {
+				if(!screenRcont.isNull()&&
+						screenRcont.isNumber()&&
+						screenRcont.isAlphabName()&&
+						screenRcont.isAlphabLastn()&&
+						screenRcont.isAlphabNation()) {
 				screenRcont.hide();
 				regC();
 				pantalla=12;
 			}
+			}
 			
 			break;
 		case 9:
-			//DE COMPRAR A AÑADIR TARJETA
+			//DE COMPRAR A Aï¿½ADIR TARJETA
 			if((678>mouseX&&mouseX>538)&&(307>mouseY&&mouseY>259)) {
 				screenRcard.textFields();
 				pantalla=10;
@@ -280,9 +287,9 @@ public class Main extends PApplet {
 			}
 			break;
 		case 10:
-			//DE AÑADIR TARJETA A COMPRAR
+			//DE Aï¿½ADIR TARJETA A COMPRAR
 			if((543>mouseX&&mouseX>349)&&(440>mouseY&&mouseY>380)) {
-				if(screenRcard.isNumberNumber()&&screenRcard.isAlphabTitular()&&screenRcard.isNumberCvv()) {
+				if(!screenRcard.isNull()&&screenRcard.isNumberNumber()&&screenRcard.isAlphabTitular()&&screenRcard.isNumberCvv()) {
 				regCard();
 				screenRcard.hide();
 				pantalla=9;
@@ -304,16 +311,15 @@ public class Main extends PApplet {
 			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
 				pantalla=4;
 			}
-			//AÑADIR CONTACTO
+			//Aï¿½ADIR CONTACTO
 			if((866>mouseX&&mouseX>716)&&(514>mouseY&&mouseY>465)) {
 				screenRcont.textFields();
 				pantalla=8;
 			}
-			break;
-		}
-		}
 
-	
+			break;
+		}}
+
 		//funcion para registrar contactos
 		public void regC() {
 				
