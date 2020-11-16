@@ -39,8 +39,8 @@ public class Controller {
 		
 	}
 	
-	public void sortContact() {
-		logic.sortList();
+	public void sortContact(int s) {
+		logic.sortList(s);
 	}
 
 	public LinkedList<Contact> getList() {

@@ -50,21 +50,25 @@ public class Logic {
 	}
 
 
-	public void sortList() {
-		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 80 && app.mouseY < 122) {
+	public void sortList(int s) {
+		switch(s) {
+		case 0:
+		
 			Collections.sort(contacts);
-		}
-		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 137 && app.mouseY < 191) {
+		break;
+		case 1:
+		
 			Collections.sort(contacts,lastn);
-		}
-		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 215 && app.mouseY < 257) {
+	break;
+		case 2:
 			Collections.sort(contacts,email);
-		}
-		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 293 && app.mouseY < 323) {
+		break;
+		case 3:
 			Collections.sort(contacts,nation);
-		}
-		if(app.mouseX > 717 && app.mouseX<848 && app.mouseY > 361 && app.mouseY < 393) {
+		break;
+		case 4:
 			Collections.sort(contacts, phone);
+			break;
 		}
 		
 	}

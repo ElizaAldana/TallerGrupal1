@@ -123,7 +123,6 @@ public class Main extends PApplet {
 			}else {
 				//dibujar los valores de la targeta
 			control.getCard().drawTitular(295, 152);
-			control.getCard().drawDate(150, 100);
 			text(screenInf.getInfo(),283, 229);
 			control.getCard().drawNumber(268, 326);
 			text(screenInf.getCost(),235,409);
@@ -298,7 +297,7 @@ public class Main extends PApplet {
 		case 12:
 			
 			//Metodo de sort en el caso 12
-			control.sortContact();
+			control.sortContact(compareClick);
 			compareClickdesu();
 			
 			//REGRESAR AL HOME
@@ -311,7 +310,7 @@ public class Main extends PApplet {
 				pantalla=8;
 			}
 			break;
-			
+		}
 		}
 
 	
