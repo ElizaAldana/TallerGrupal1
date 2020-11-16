@@ -40,7 +40,8 @@ public class ScreenLogIn {
 		  .setPosition(283,263)
 		  .setSize(335,45)
 		  .setFont(app.createFont("arial",20))
-		  .setAutoClear(false);
+		  .setAutoClear(false)
+		  .setPasswordMode(true);
 		//Esconder las etiquetas
 		Label labelE = cp5.get(Textfield.class,"Email").getCaptionLabel();
 		labelE.hide();

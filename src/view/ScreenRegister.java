@@ -64,6 +64,7 @@ public class ScreenRegister {
 		     .setSize(332,44)
 		     .setFont(app.createFont("arial",20))
 		     .setAutoClear(false);
+		     
 			//Esconder las etiquetas
 				Label labelN = cp5.get(Textfield.class,"name").getCaptionLabel();
 				labelN.hide();
