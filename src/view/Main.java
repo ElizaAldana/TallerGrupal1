@@ -183,11 +183,16 @@ public class Main extends PApplet {
 			}
 			//DE LOG IN A HOME
 			//aca debo poner la cosa para que ingrese con el login lo de register
-			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357) && screenLog.getEmail().equals(screenReg.getEmail()) 
+			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+				screenLog.logIn();
+				if(screenLog.getEmail().equals(screenReg.getEmail()) 
 				&& screenLog.getPassword().equals(screenReg.getPassword())) {
 				screenLog.hide();
 				pantalla=4;
 				
+				}else {
+					JOptionPane.showMessageDialog(null, "El usuario no se encuentra registrado", "Woops", JOptionPane.ERROR_MESSAGE);
+				}
 					}
 				
 			break;
@@ -342,9 +347,7 @@ public class Main extends PApplet {
 		}
 		
 	
-	public void LogIn() {
-		screenLog.logIn(this);
-	}
+	
 	
 	
 	public void regCard() {

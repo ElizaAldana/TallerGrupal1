@@ -68,7 +68,7 @@ public class ScreenLogIn {
 
 	
 	
-	public void logIn(Main main) {
+	public void logIn() {
 		email = cp5.get(Textfield.class,"Email").getText();
 		password = cp5.get(Textfield.class,"Password").getText();
 		
