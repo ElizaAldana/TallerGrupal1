@@ -15,7 +15,7 @@ public class ScreenLogIn {
 	PImage buttonIng;
 	ControlP5 cp5;
 	//Main main;
-	String username, password;
+	String email, password;
 	
 	public ScreenLogIn(PApplet app) {
 		this.app=app;
@@ -69,21 +69,22 @@ public class ScreenLogIn {
 	
 	
 	public void logIn(Main main) {
-		username = cp5.get(Textfield.class,"Username").getText();
+		email = cp5.get(Textfield.class,"Email").getText();
 		password = cp5.get(Textfield.class,"Password").getText();
 		
 		}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 		
 		
