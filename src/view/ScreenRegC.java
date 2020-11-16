@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JOptionPane;
+
 import controlP5.ControlP5;
 import controlP5.Label;
 import controlP5.Textfield;
@@ -36,6 +38,62 @@ public class ScreenRegC {
 			app.imageMode(PConstants.CORNER);
 			app.image(buttonAny,0,0,app.width,app.height);
 	}
+	}
+	public boolean isNumber() {
+	    try {
+	        double d = Float.parseFloat(cp5.get(Textfield.class,"phone").getText());
+	    } catch (NumberFormatException nfe) {
+	    	cp5.get(Textfield.class,"phone").clear();
+	    	JOptionPane.showMessageDialog(null, "El teléfono debe ser un número");
+	        return false;
+	    }
+	    return true;
+	}
+	public boolean isAlphabName() {
+	    for (int i = 0; i < cp5.get(Textfield.class,"name").getText().length(); i++) {
+	        char c = cp5.get(Textfield.class,"name").getText().charAt(i);
+	        if (!Character.isLetter(c)) {
+	        	cp5.get(Textfield.class,"name").clear();
+	        	JOptionPane.showMessageDialog(null, "El nombre sólo puede tener caracteres alfabéticos");
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	public boolean isAlphabLastn() {
+	    for (int i = 0; i < cp5.get(Textfield.class,"lastn").getText().length(); i++) {
+	        char c = cp5.get(Textfield.class,"lastn").getText().charAt(i);
+	        if (!Character.isLetter(c)) {
+	        	cp5.get(Textfield.class,"lastn").clear();
+	        	JOptionPane.showMessageDialog(null, "El apellido sólo puede tener caracteres alfabéticos");
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	public boolean isAlphabNation() {
+	    for (int i = 0; i < cp5.get(Textfield.class,"nation").getText().length(); i++) {
+	        char c = cp5.get(Textfield.class,"nation").getText().charAt(i);
+	        if (!Character.isLetter(c)) {
+	        	cp5.get(Textfield.class,"nation").clear();
+	        	JOptionPane.showMessageDialog(null, "La nacionalidad sólo puede tener caracteres alfabéticos");
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	public boolean isNull() {
+		if(cp5.get(Textfield.class,"name").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"lastn").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"email").getText().trim().isEmpty() ||
+		   cp5.get(Textfield.class,"nation").getText().trim().isEmpty() || 
+		   cp5.get(Textfield.class,"phone").getText().trim().isEmpty())
+	        {
+			JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Woops", JOptionPane.ERROR_MESSAGE);
+	           return true;
+	        }else {
+	        	return false;
+	        }
 	}
 	public void textFields() {
 		cp5.addTextfield("name")

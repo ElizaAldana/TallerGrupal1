@@ -121,6 +121,20 @@ public class ScreenRegister {
 		    }
 		    return true;
 		}
+		public boolean isNull() {
+			if(cp5.get(Textfield.class,"name").getText().trim().isEmpty() ||
+			   cp5.get(Textfield.class,"lastn").getText().trim().isEmpty() ||
+			   cp5.get(Textfield.class,"email").getText().trim().isEmpty() ||
+			   cp5.get(Textfield.class,"nation").getText().trim().isEmpty() || 
+			   cp5.get(Textfield.class,"password").getText().trim().isEmpty() || 
+			   cp5.get(Textfield.class,"phone").getText().trim().isEmpty())
+		        {
+				JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos.", "Woops", JOptionPane.ERROR_MESSAGE);
+		           return true;
+		        }else {
+		        	return false;
+		        }
+		}
 		public void drawReg() {
 			app.imageMode(PConstants.CORNER);
 			app.image(register,0,0,app.width,app.height);
