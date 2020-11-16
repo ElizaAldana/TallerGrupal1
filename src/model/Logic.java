@@ -53,7 +53,6 @@ public class Logic {
 	public void sortList(int s) {
 		switch(s) {
 		case 0:
-		
 			Collections.sort(contacts);
 		break;
 		case 1:

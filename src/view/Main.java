@@ -100,7 +100,6 @@ public class Main extends PApplet {
 			break;
 		case 9:
 			screenBuy.drawBuy();
-			text(mouseX +","+ mouseY ,mouseX,mouseY);
 			text(screenInf.getCost(),678,191);
 			text(screenInf.getCost(),186,365);
 			text(screenInf.getInfo(),308,187);
@@ -116,7 +115,6 @@ public class Main extends PApplet {
 			break;
 		case 11:
 			screenBuyF.drawBuyF();
-			text(mouseX +","+ mouseY ,mouseX,mouseY);
 			//este if evita que de un error antes de que "card" sea ingrsado y permite poner un mensaje de que el usuario debe hacerlo
 			if(control.getCard()==null) {
 				text("No has ingresado ninguna tarjeta", 200, 70);
@@ -139,7 +137,7 @@ public class Main extends PApplet {
 					control.getList().get(i).drawName(295,137+(i*50));
 					break;
 				case 1:
-					control.getList().get(i).drawApellido(295,137+(i*50));
+					control.getList().get(i).drawLastn(295,137+(i*50));
 					break;
 				case 2:
 					control.getList().get(i).drawEmail(295,137+(i*50));
@@ -309,9 +307,9 @@ public class Main extends PApplet {
 		case 12:
 			
 			//Metodo de sort en el caso 12
-			control.sortContact(compareClick);
-			compareClickdesu();
 			
+			compareClickdesu();
+			control.sortContact(compareClick);
 			//REGRESAR AL HOME
 			if((130>mouseX&&mouseX>107)&&(81>mouseY&&mouseY>43)) {
 				pantalla=4;

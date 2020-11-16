@@ -41,7 +41,7 @@ private float phone;
 		app.text(this.name, x, y);
 	}
 	
-	public void drawApellido(int x, int y) {
+	public void drawLastn(int x, int y) {
 		app.text(this.lastn, x, y);
 	}
 	
