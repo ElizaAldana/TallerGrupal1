@@ -184,10 +184,11 @@ public class Main extends PApplet {
 			}
 			//DE LOG IN A HOME
 			//aca debo poner la cosa para que ingrese con el login lo de register
-			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357)) {
+			if((527>mouseX&&mouseX>373)&&(404>mouseY&&mouseY>357) && screenLog.getEmail().equals(screenReg.getEmail()) 
+				&& screenLog.getPassword().equals(screenReg.getPassword())) {
 				screenLog.hide();
 				pantalla=4;
-					
+				
 					}
 				
 			break;
@@ -310,7 +311,7 @@ public class Main extends PApplet {
 				screenRcont.textFields();
 				pantalla=8;
 			}
-			break;
+			break;}
 			
 		}
 
